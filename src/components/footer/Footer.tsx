@@ -7,9 +7,9 @@ export function Footer() {
 
   return (
     <footer className="bg-orange-100/50 LandingSubTitle py-6 px-4 md:px-6">
-      <div className="container mx-auto items-center grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      <div className="container mx-auto items-center grid grid-cols-2 md:grid-cols-4 gap-4 gap-x-14 md:gap-x-24 md:gap-6">
         <Logo />
-        <nav className="space-y-2 md:space-y-0 md:space-x-4">
+        <nav className="flex flex-col gap-2 md:flex-row">
           <FooterOptionalLinks />
           <Link className="text-sm hover:underline" href="/about">
             Nosotros
