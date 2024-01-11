@@ -13,7 +13,7 @@ export default function NavBar() {
          `}>
       <Drawer />
       <Link
-        href={'/home'}>
+        href={'/'}>
         <Suspense fallback={<NavLogoSkeleton />}>
           <Logo />
         </Suspense>
