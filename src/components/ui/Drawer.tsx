@@ -3,6 +3,7 @@ import { FcMenu } from "react-icons/fc";
 import Filters from "../filters/Filters";
 import { useState } from 'react'
 import { cn } from "@/lib/utils";
+import SortAndFilterContainer from "../filters/SortAndFilterContainer";
 
 export default function Drawer() {
 
@@ -35,7 +36,7 @@ export default function Drawer() {
         peer-checked:left-0 peer:transition ease-out delay-150 duration-300 shadow-xl  
         `}
       >
-        <Filters />
+        <SortAndFilterContainer />
       </div>
     </section>
   );

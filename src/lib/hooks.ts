@@ -49,9 +49,9 @@ export const useUrlSearchParams = () => {
     return Number(initialPage)
   }
 
-  const getActiveQuery = () => {
+  const getActiveFilter = (name: string) => {
     for (const [key, value] of searchParams.entries()) {
-      if (key === 'query') {
+      if (key === name) {
         return value
       }
     }
@@ -64,7 +64,7 @@ export const useUrlSearchParams = () => {
     setPage,
     getCurrentPage,
     isFilterActive,
-    getActiveQuery
+    getActiveFilter
   }
 }
 

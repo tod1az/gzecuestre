@@ -215,3 +215,14 @@ export const Links = [
     name: 'contacto'
   }
 ] as const
+
+export const Sexos = [
+  {
+    id: 1,
+    name: 'macho'
+  },
+  {
+    id: 2,
+    name: 'hembra'
+  }
+]
