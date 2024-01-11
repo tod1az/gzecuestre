@@ -10,14 +10,14 @@ type PageProps = {
 }
 
 export default function page({ searchParams }: PageProps) {
-  const { Color, Query, Raza, page } = searchParams
+  const { maxalzada, maxedad, maxprecio, minalzada, minedad, minprecio, page } = searchParams
   return (
     <main className="scroll-m-[10000rem]">
       <section className="mt-[6rem] flex flex-col   xl:flex-row-reverse xl:ml-80  gap-5 ">
         <aside className="h-[15rem] xl:h-screen xl:w-[16rem] border">
           ads
         </aside>
-        <Suspense key={Color! + Query! + Raza! + page!} fallback={<CardsSkeleton />}>
+        <Suspense key={maxalzada + maxedad + maxprecio + minalzada + minedad + minprecio + page} fallback={<CardsSkeleton />}>
           <CardContainer horses={horses} searchParams={searchParams} />
         </Suspense>
       </section>
