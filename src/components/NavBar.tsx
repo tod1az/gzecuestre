@@ -8,9 +8,7 @@ export default function NavBar() {
   return (
     <nav
       className={`top-0 bg-blanco flex justify-center items-center
-         fixed  h-[4.5rem] text-2xl shadow-xl  w-screen z-[10]
-         
-         `}>
+         fixed  h-[4.5rem] text-2xl shadow-xl  w-screen z-[10]`}>
       <Drawer />
       <Link
         href={'/'}>
