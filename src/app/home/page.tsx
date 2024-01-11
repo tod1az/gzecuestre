@@ -17,7 +17,7 @@ export default function page({ searchParams }: PageProps) {
         <aside className="h-[15rem] xl:h-screen xl:w-[16rem] border">
           ads
         </aside>
-        <Suspense key={maxalzada + maxedad + maxprecio + minalzada + minedad + minprecio + page} fallback={<CardsSkeleton />}>
+        <Suspense key={maxalzada! + maxedad + maxprecio + minalzada + minedad + minprecio + page} fallback={<CardsSkeleton />}>
           <CardContainer horses={horses} searchParams={searchParams} />
         </Suspense>
       </section>
