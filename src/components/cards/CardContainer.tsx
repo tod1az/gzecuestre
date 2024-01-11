@@ -2,19 +2,19 @@ import Card from "./Card"
 import { Fragment } from "react"
 import { HomeSearchParams, type Horse } from "@/lib/types"
 import Ad from "../ad/Ad"
-import { getEvenHalf } from "@/lib/utils"
 
 type CardContainerProps = {
   horses: Horse[]
   searchParams: HomeSearchParams
 }
 export default function CardContainer({ horses, searchParams }: CardContainerProps) {
-  const halfResponse = getEvenHalf(horses)
+  const addLocation = 13
   return (
-    <section className="flex flex-wrap mb-10 xl:w-10/12 xl:px-16 justify-center gap-1 md:gap-6">
+    <section
+      className="grid grid-cols-2 gap-1  xl:grid-cols-4 mx-auto md:grid-cols-3 justify-center  md:gap-x-[1rem] md:gap-y-[1rem]">
       {
         horses.map((horse, index) => {
-          if (index + 1 === halfResponse) {
+          if (index + 1 === addLocation) {
             return (
               <Fragment key={'ad'}>
                 <Ad />
