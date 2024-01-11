@@ -12,7 +12,10 @@ export type SectionName = (typeof Links)[number]['name']
 
 export type HomeSearchParams = {
   page?: string
-  Query?: string
-  Raza?: string
-  Color?: string
+  minedad?: string
+  maxedad?: string
+  minprecio?: string
+  maxprecio?: string
+  minalzada?: string
+  maxalzada?: string
 }
