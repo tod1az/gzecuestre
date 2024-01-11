@@ -1,12 +1,9 @@
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { FilterSlider } from "./FilterSlider"
@@ -41,46 +38,41 @@ export default function DialogRange({ name, maxRange, step }: DialogRangeProps) 
   }
 
   return (
-    <Dialog onOpenChange={(open) => {
-      if (!open) {
-        setMin('0')
-        setMax('0')
-        setValidRange('default')
-      }
-    }}>
+    <Popover
+      onOpenChange={
+        (open) => {
+          if (!open) {
+            setMin('0')
+            setMax('0')
+            setValidRange('default')
+          }
+        }} >
       <div className="flex gap-2">
-        <DialogTrigger asChild className="text-xl capitalize text-gray-600  px-3 py-1   bg-blanco/50 rounded-xl">
+        <PopoverTrigger asChild className="text-xl capitalize text-gray-600  px-3 py-1   bg-blanco/50 rounded-xl">
           <button >
             {name}
           </button>
-        </DialogTrigger>
+        </PopoverTrigger>
         {
           !!currentValue && (<FilterBadge name={name}>
             {`${currentValue[0]} - ${currentValue[1]}`}
           </FilterBadge>)
         }
       </div>
-      <DialogContent className="sm:max-w-[425px] LandingSubTitle bg-orange-100">
-        <DialogHeader>
-          <DialogTitle className="capitalize" >{name}</DialogTitle>
-          <DialogDescription>
-            Elige el rango de precios que necesites y presiona guardar cuando termines.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
+      <PopoverContent className="sm:max-w-[425px] ml-4 LandingSubTitle bg-orange-100">
+        <h2 className="capitalize" >{name}</h2>
+        <section className="grid gap-4 py-4">
           <Label>{`Mínimo: ${min}`}</Label>
           <FilterSlider max={maxRange} step={step} onValueChange={(value) => setMin(String(value))} />
           <Label>{`Máximo: ${max}`}</Label>
           <FilterSlider max={maxRange} step={step} onValueChange={(value) => setMax(String(value))} />
-        </div>
+        </section>
         <small
           className={cn("text-red-900 hidden", { "block": validRange === 'invalid' })}>
           El rango ingresado no es valido, intente nuevamente
         </small>
-        <DialogFooter>
-          <Button className="bg-orange-500" onClick={handleSave} type="submit">Guardar cambios</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        <Button className="bg-orange-500" onClick={handleSave} type="submit">Guardar cambios</Button>
+      </PopoverContent>
+    </Popover>
   )
 }
