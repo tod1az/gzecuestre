@@ -4,6 +4,7 @@ import FeaturedSection from "@/components/landing/FeaturedSection"
 import Sponsors from "@/components/landing/SponsorsSection"
 import ContactSection from "@/components/landing/ContactSection"
 import { ActiveSectionContextProvider } from "@/context/ActiveSectionContext"
+import WhatsAppWidget from "@/components/WhatsAppWidget"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <FeaturedSection />
         <Sponsors />
         <ContactSection />
+        <WhatsAppWidget href='https://walink.co/a1faab' />
       </ActiveSectionContextProvider>
     </main>
   )

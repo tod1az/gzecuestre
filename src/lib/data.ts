@@ -4,140 +4,200 @@ export const horses = [
     name: 'Relámpago',
     breed: 'Pura Sangre',
     age: 5,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A majestic Pura Sangre horse named Relámpago, 5 years old and male.',
+    email: 'relampago@example.com',
+    number: '+1234567890'
   },
   {
     id: 'ea7',
     name: 'Esmeralda',
     breed: 'Árabe',
     age: 7,
-    sex: 'Hembra'
+    sex: 'Hembra',
+    description: 'An elegant Árabe horse named Esmeralda, 7 years old and female.',
+    email: 'esmeralda@example.com',
+    number: '+1987654321'
   },
   {
     id: 'ca4',
     name: 'Centella',
     breed: 'Appaloosa',
     age: 4,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A vibrant Appaloosa horse named Centella, 4 years old and male.',
+    email: 'centella@example.com',
+    number: '+1122334455'
   },
   {
     id: 'rt6',
     name: 'Rayo',
     breed: 'Trotón Francés',
     age: 6,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A speedy Trotón Francés horse named Rayo, 6 years old and male.',
+    email: 'rayo@example.com',
+    number: '+447700900000'
   },
   {
     id: 'ab8',
     name: 'Azabache',
     breed: 'Andaluz',
     age: 8,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A noble Andaluz horse named Azabache, 8 years old and male.',
+    email: 'azabache@example.com',
+    number: '+15551234567'
   },
   {
     id: 'ma3',
     name: 'Mariposa',
     breed: 'Mustang',
     age: 3,
-    sex: 'Hembra'
+    sex: 'Hembra',
+    description: 'A free-spirited Mustang horse named Mariposa, 3 years old and female.',
+    email: 'mariposa@example.com',
+    number: '+61412345678'
   },
   {
     id: 'na5',
     name: 'Nube',
     breed: 'Frisón',
     age: 5,
-    sex: 'Hembra'
+    sex: 'Hembra',
+    description: 'A graceful Frisón horse named Nube, 5 years old and female.',
+    email: 'nube@example.com',
+    number: '+81345678901'
   },
   {
     id: 'sa4',
     name: 'Sable',
     breed: 'Shire',
     age: 4,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A powerful Shire horse named Sable, 4 years old and male.',
+    email: 'sable@example.com',
+    number: '+27824567890'
   },
   {
     id: 'li6',
     name: 'Lluvia',
     breed: 'Lipizzan',
     age: 6,
-    sex: 'Hembra'
+    sex: 'Hembra',
+    description: 'An elegant Lipizzan horse named Lluvia, 6 years old and female.',
+    email: 'lluvia@example.com',
+    number: '+61234567890'
   },
   {
     id: 'do2',
     name: 'Dorado',
     breed: 'Dales',
     age: 2,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A spirited Dales horse named Dorado, 2 years old and male.',
+    email: 'dorado@example.com',
+    number: '+81334567890'
   },
   {
     id: 'th7',
     name: 'Thunder',
     breed: 'Thoroughbred',
     age: 7,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A swift Thoroughbred horse named Thunder, 7 years old and male.',
+    email: 'thunder@example.com',
+    number: '+447712345678'
   },
   {
     id: 'wi4',
     name: 'Wind',
     breed: 'Clydesdale',
     age: 4,
-    sex: 'Hembra'
+    sex: 'Hembra',
+    description: 'A gentle Clydesdale horse named Wind, 4 years old and female.',
+    email: 'wind@example.com',
+    number: '+15552345678'
   },
   {
     id: 'st5',
     name: 'Storm',
     breed: 'Standardbred',
     age: 5,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A strong Standardbred horse named Storm, 5 years old and male.',
+    email: 'storm@example.com',
+    number: '+61421112222'
   },
   {
     id: 'qu3',
     name: 'Quasar',
     breed: 'Quarter Horse',
     age: 3,
-    sex: 'Hembra'
+    sex: 'Hembra',
+    description: 'A lively Quarter Horse named Quasar, 3 years old and female.',
+    email: 'quasar@example.com',
+    number: '+1234567890'
   },
   {
     id: 'sp6',
     name: 'Spark',
     breed: 'Spanish Mustang',
     age: 6,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A spirited Spanish Mustang named Spark, 6 years old and male.',
+    email: 'spark@example.com',
+    number: '+447700900000'
   },
   {
     id: 'su4',
     name: 'Sunrise',
     breed: 'Suffolk Punch',
     age: 4,
-    sex: 'Hembra'
+    sex: 'Hembra',
+    description: 'A charming Suffolk Punch horse named Sunrise, 4 years old and female.',
+    email: 'sunrise@example.com',
+    number: '+15551234567'
   },
   {
     id: 'ch5',
     name: 'Champion',
     breed: 'Cleveland Bay',
     age: 5,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A champion Cleveland Bay horse named Champion, 5 years old and male.',
+    email: 'champion@example.com',
+    number: '+61412345678'
   },
   {
     id: 'br7',
     name: 'Breeze',
     breed: 'Brabant',
     age: 7,
-    sex: 'Hembra'
+    sex: 'Hembra',
+    description: 'A gentle Brabant horse named Breeze, 7 years old and female.',
+    email: 'breeze@example.com',
+    number: '+81345678901'
   },
   {
     id: 'gl4',
     name: 'Glacier',
     breed: 'Gypsy Vanner',
     age: 4,
-    sex: 'Macho'
+    sex: 'Macho',
+    description: 'A majestic Gypsy Vanner horse named Glacier, 4 years old and male.',
+    email: 'glacier@example.com',
+    number: '+27824567890'
   },
   {
     id: 'wi8',
     name: 'Winter',
     breed: 'Welsh Pony',
     age: 8,
-    sex: 'Hembra'
+    sex: 'Hembra',
+    description: 'A playful Welsh Pony named Winter, 8 years old and female.',
+    email: 'winter@example.com',
+    number: '+61234567890'
   }
 ]
 
@@ -224,5 +284,16 @@ export const Sexos = [
   {
     id: 2,
     name: 'hembra'
+  }
+]
+
+export const Orders = [
+  {
+    id: 9878829347,
+    name: 'menor precio'
+  },
+  {
+    id: 9878829123347,
+    name: 'mayor precio'
   }
 ]

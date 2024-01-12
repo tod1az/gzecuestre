@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
-import WhatsAppWidget from '@/components/WhatsAppWidget'
 import { Footer } from '@/components/footer/Footer'
 
 const CastoroRegular = localFont({
@@ -23,7 +22,6 @@ export default function RootLayout({
     <html lang="en" className='!scroll-smooth'>
       <body className={`${CastoroRegular.className}`}>
         {children}
-        <WhatsAppWidget />
         <Footer />
       </body>
     </html>

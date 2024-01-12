@@ -6,6 +6,9 @@ export type Horse = {
   breed: string
   age: number
   sex: string
+  description: string
+  email: string
+  number: string
 }
 
 export type SectionName = (typeof Links)[number]['name']

@@ -11,7 +11,12 @@ export const useUrlSearchParams = () => {
   const path = usePathname()
 
   const setFilter = ({ name, value }: { name: string; value: string }) => {
-    params.set(name, value)
+    if (name === 'orden') {
+      const newValue = value.split(' ')[0] === 'mayor' ? 'desc' : 'asc'
+      params.set(name, newValue)
+    } else {
+      params.set(name, value)
+    }
     replace(`${path}?${params.toString()}`)
   }
 
@@ -52,6 +57,8 @@ export const useUrlSearchParams = () => {
   const getActiveFilter = (name: string) => {
     for (const [key, value] of searchParams.entries()) {
       if (key === name) {
+        if (value === 'asc') return 'menor precio'
+        if (value === 'desc') return 'mayor precio'
         return value
       }
     }

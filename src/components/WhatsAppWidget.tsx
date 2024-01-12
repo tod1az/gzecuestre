@@ -1,10 +1,14 @@
 import Link from "next/link";
 import WhatsAppLogo from "./logos/WhatsAppLogo";
 
-export default function WhatsAppWidget() {
+type Props = {
+  href: string
+}
+
+export default function WhatsAppWidget({ href }: Props) {
   return (
     <Link
-      href={'https://walink.co/a1faab'}
+      href={href}
       target="_blank"
       className={`fixed flex items-center hover:scale-125 transition-transform
        bottom-5 right-4 xl:right-16`}  >
