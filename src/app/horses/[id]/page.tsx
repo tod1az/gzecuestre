@@ -9,10 +9,10 @@ type Props = {
   }
 }
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
   const { id } = params
-  const horse = getHorse(id)
-  if (!horse) return <h1>Cargando...</h1>
+  const horse = await getHorse(id)
+  if (horse === undefined) return <h1>Cargando...</h1>
   return (
     <main className="h-screen flex flex-col md:flex-row items-center justify-center">
       <section>
