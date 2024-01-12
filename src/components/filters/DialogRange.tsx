@@ -1,3 +1,4 @@
+'use client'
 import {
   Popover,
   PopoverContent,
@@ -7,7 +8,7 @@ import {
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { FilterSlider } from "./FilterSlider"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useUrlSearchParams } from "@/lib/hooks"
 import { cn } from "@/lib/utils"
 import FilterBadge from "./FilterBadges"
@@ -22,34 +23,39 @@ type RangeStatus = 'default' | 'valid' | 'invalid'
 
 export default function DialogRange({ name, maxRange, step }: DialogRangeProps) {
 
+  const [open, setOpen] = useState(false)
   const [max, setMax] = useState('0')
   const [min, setMin] = useState('0')
   const [validRange, setValidRange] = useState<RangeStatus>('default')
   const { setFilter, isFilterActive } = useUrlSearchParams()
+
   const currentValue = isFilterActive(name)
+
   const handleSave = () => {
     if (Number(min) < Number(max)) {
       setValidRange('valid')
       setFilter({ name: `max${name}`, value: max })
       setFilter({ name: `min${name}`, value: min })
+      setValidRange('valid')
+      setOpen(!open)
     } else {
       setValidRange('invalid')
     }
   }
 
+  useEffect(() => {
+    if (!open) {
+      setMin('0')
+      setMax('0')
+      setValidRange('default')
+    }
+  }, [open])
+
   return (
-    <Popover
-      onOpenChange={
-        (open) => {
-          if (!open) {
-            setMin('0')
-            setMax('0')
-            setValidRange('default')
-          }
-        }} >
+    <Popover open={open} >
       <div className="flex gap-2">
         <PopoverTrigger asChild className="text-xl capitalize text-gray-600  px-3 py-1   bg-blanco/50 rounded-xl">
-          <button >
+          <button onClick={() => setOpen(!open)} >
             {name}
           </button>
         </PopoverTrigger>

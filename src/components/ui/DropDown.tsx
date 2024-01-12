@@ -31,14 +31,14 @@ export default function DropDown2({ name, items }: DropDown2Props) {
   return (
 
     <DropdownMenu>
-      <div className="flex gap-2">
+      <div className="flex flex-col gap-7">
         <DropdownMenuTrigger
           className="capitalize flex items-center gap-2 text-xl text-gray-600 border ps-3 py-1 px-1 border-none bg-blanco/50 rounded-xl">
           {name}<FaChevronDown />
         </DropdownMenuTrigger>
         {
           !!currentValue && (
-            <FilterBadge name="sexo">
+            <FilterBadge name={name}>
               {currentValue}
             </FilterBadge>
           )
