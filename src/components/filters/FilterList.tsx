@@ -6,7 +6,7 @@ import { Orders } from "@/lib/data";
 export default function FilterList() {
   return (
     <ul className="flex flex-col w-max  gap-9 justify-center items-start">
-      <ul className="flex gap-[6rem]">
+      <ul className="flex gap-[4rem]">
         <li><DropDown2 items={Sexos} name="sexo" /></li>
         <li><DropDown2 items={Orders} name="orden" /></li>
       </ul>

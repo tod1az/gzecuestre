@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Horse } from "@/lib/types"
 import DetailCarousel from "@/components/detail/DetailCarousel"
 import { featuredHorses } from "@/lib/data"
+import NavBar from "@/components/NavBar"
 
 type PageProps = {
   params: {
@@ -18,6 +19,7 @@ export default async function Page({ params }: PageProps) {
   if (!horse) return <h1>Cargando...</h1>
   return (
     <main className="flex flex-col bg-gradient-to-l w-screen pt-[6rem]  from-orange-100 to orange-50 items-center">
+      <NavBar />
       <section className="flex flex-col w-3/4   md:gap-y-8  mb-[6rem]  items-center">
         <div className="w-full">
           <DetailCarousel items={featuredHorses} name={horse.name} />
