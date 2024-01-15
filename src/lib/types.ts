@@ -9,6 +9,7 @@ export type Horse = {
   description: string
   email: string
   number: string
+  price: number
 }
 
 export type SectionName = (typeof Links)[number]['name']

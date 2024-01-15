@@ -12,15 +12,17 @@ export default function FooterOptionalLinks() {
       </Link>
     )
   }
-  if (path === '/about') {
-    return (<>
-      <Link className="text-sm hover:underline" href="/">
-        Inicio
-      </Link>
-      <Link className="text-sm hover:underline" href="/home">
-        Catálogo
-      </Link>
-    </>)
+  if (path === '/about' || path.startsWith('/horses')) {
+    return (
+      <>
+        <Link className="text-sm hover:underline" href="/">
+          Inicio
+        </Link>
+        <Link className="text-sm hover:underline" href="/home">
+          Catálogo
+        </Link>
+      </>
+    )
   }
 
   return (

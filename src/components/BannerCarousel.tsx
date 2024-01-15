@@ -50,10 +50,10 @@ export default function BannerCarousel({ items }: LandginCarouselProprs) {
           {
             items.map((item) => (
               <CarouselItem key={item.imageRoute} className="">
-                <Card className="bg-blanco flex justify-center ">
+                <Card className="bg-blanco border-none flex justify-center ">
                   <CardContent className="flex object-cover w-full  h-[20rem] items-center justify-center p-0">
                     <Image
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-auto h-[20rem] object-cover"
                       src={item.imageRoute}
                       width={500}
                       height={100}
