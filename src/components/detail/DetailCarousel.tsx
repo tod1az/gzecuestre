@@ -32,7 +32,7 @@ export default function DetailCarousel({ items, name }: DetailCarouselProps) {
           items.map((item) => (
             <CarouselItem key={item.imageRoute} className="rounded-lg overflow-hidden">
               <Card className="bg-black border-none flex justify-center ">
-                <CardContent className="flex object-cover w-full  h-[25rem] items-center justify-center p-0">
+                <CardContent className="flex object-cover w-full h-[15rem] md:h-[25rem] items-center justify-center p-0">
                   <Image
                     className="w-auto h-full object-cover"
                     src={item.imageRoute}
@@ -47,15 +47,18 @@ export default function DetailCarousel({ items, name }: DetailCarouselProps) {
           ))
         }
         <CarouselItem className="rounded-lg">
-          <Card className="bg-black border-none flex justify-center ">
-            <CardContent className="w-auto  h-[25rem]">
+          <Card className="bg-black border-none  flex justify-center ">
+            <CardContent className="w-auto  h-[25rem] hidden md:block">
               <Video id={'P4jKxFhnjAU'} name={name} height="400" width="600" />
+            </CardContent>
+            <CardContent className="w-auto pt-10 h-[15rem] md:hidden">
+              <Video id={'P4jKxFhnjAU'} name={name} height="150" width="300" />
             </CardContent>
           </Card>
         </CarouselItem>
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden md:flex md:items-center" />
+      <CarouselNext className="hidden md:flex md:items-center" />
     </Carousel >
   )
 }
