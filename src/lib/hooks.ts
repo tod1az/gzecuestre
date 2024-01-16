@@ -30,7 +30,7 @@ export const useUrlSearchParams = () => {
   }
 
   const isFilterActive = (name: string) => {
-    const currentFilter = ['0', '0']
+    const currentFilter: [string, string] = ['0', '0']
     for (const [key, value] of searchParams.entries()) {
       if (key === `min${name}`) {
         currentFilter[0] = value

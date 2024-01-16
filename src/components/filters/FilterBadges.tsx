@@ -1,6 +1,12 @@
 import { IoIosCloseCircle } from "react-icons/io";
 import { useUrlSearchParams } from "@/lib/hooks";
-export default function FilterBadge({ name, children }: { name: string, children: React.ReactNode }) {
+
+type FilterBadgeProps = {
+  name: string
+  children: React.ReactNode
+}
+
+export default function FilterBadge({ name, children }: FilterBadgeProps) {
   const { deleteFilter } = useUrlSearchParams()
   return (
     <div

@@ -13,15 +13,19 @@ import { useUrlSearchParams } from "@/lib/hooks"
 import { cn } from "@/lib/utils"
 import FilterBadge from "./FilterBadges"
 
+type Measurement = 'cm' | 'años' | '$'
+
 type DialogRangeProps = {
   name: string
   maxRange: number
   step: number
+  measurement: Measurement
 }
 
 type RangeStatus = 'default' | 'valid' | 'invalid'
 
-export default function DialogRange({ name, maxRange, step }: DialogRangeProps) {
+
+export default function DialogRange({ name, maxRange, step, measurement }: DialogRangeProps) {
 
   const [open, setOpen] = useState(false)
   const [max, setMax] = useState('0')
@@ -60,17 +64,22 @@ export default function DialogRange({ name, maxRange, step }: DialogRangeProps) 
           </button>
         </PopoverTrigger>
         {
-          !!currentValue && (<FilterBadge name={name}>
-            {`${currentValue[0]} - ${currentValue[1]}`}
-          </FilterBadge>)
+          !!currentValue && (
+            <FilterBadge name={name}>
+              <BadgeValue values={currentValue} measurement={measurement} />
+            </FilterBadge>)
         }
       </div>
       <PopoverContent className="sm:max-w-[425px] ml-4 LandingSubTitle bg-orange-100">
         <h2 className="capitalize" >{name}</h2>
         <section className="grid gap-4 py-4">
-          <Label>{`Mínimo: ${min}`}</Label>
+          <Label>
+            <SliderValue max={false} measurement={measurement} value={min} />
+          </Label>
           <FilterSlider max={maxRange} step={step} onValueChange={(value) => setMin(String(value))} />
-          <Label>{`Máximo: ${max}`}</Label>
+          <Label>
+            <SliderValue max={true} measurement={measurement} value={max} />
+          </Label>
           <FilterSlider max={maxRange} step={step} onValueChange={(value) => setMax(String(value))} />
         </section>
         <small
@@ -81,4 +90,50 @@ export default function DialogRange({ name, maxRange, step }: DialogRangeProps) 
       </PopoverContent>
     </Popover>
   )
+}
+
+type SliderValueProps = {
+  measurement: Measurement
+  max: boolean
+  value: string
+}
+
+function SliderValue({ measurement, max, value }: SliderValueProps) {
+  const minText = 'Mínimo: '
+  const maxText = 'Máximo: '
+  if (measurement === '$') {
+    return max
+      ? `${maxText}${measurement}${value}`
+      : `${minText}${measurement}${value}`
+  }
+  if (measurement === "cm") {
+    return max
+      ? `${maxText}${value}${measurement}`
+      : `${maxText}${value}${measurement}`
+  }
+  if (measurement === "años") {
+    return max
+      ? `${maxText}${value} ${measurement}`
+      : `${maxText}${value} ${measurement}`
+  }
+
+
+}
+
+type BadgeValueProps = {
+  measurement: Measurement
+  values: [string, string]
+}
+
+function BadgeValue({ measurement, values }: BadgeValueProps) {
+  const [min, max] = values
+  if (measurement === "cm") {
+    return `${min}${measurement} - ${max}${measurement}`
+  }
+  if (measurement === "$") {
+    return `${measurement}${min} - ${measurement}${max}`
+  }
+  if (measurement === "años") {
+    return `${min} ${measurement} - ${max} ${measurement}`
+  }
 }

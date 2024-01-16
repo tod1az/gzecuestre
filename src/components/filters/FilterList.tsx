@@ -10,10 +10,10 @@ export default function FilterList() {
         <li><DropDown2 items={Sexos} name="sexo" /></li>
         <li><DropDown2 items={Orders} name="orden" /></li>
       </ul>
-      <li><DialogRange name="edad" step={1} maxRange={30} /></li>
-      <li><DialogRange name="precio" step={500} maxRange={100000} /></li>
-      <li><DialogRange name="alzada" step={1} maxRange={180} /></li>
-      <li><DialogRange name="salto" step={1} maxRange={180} /></li>
+      <li><DialogRange name="edad" measurement="años" step={1} maxRange={30} /></li>
+      <li><DialogRange name="precio" measurement="$" step={500} maxRange={100000} /></li>
+      <li><DialogRange name="alzada" measurement="cm" step={1} maxRange={200} /></li>
+      <li><DialogRange name="salto" measurement="cm" step={5} maxRange={160} /></li>
     </ul>
   )
 }

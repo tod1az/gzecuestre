@@ -23,3 +23,5 @@ export type HomeSearchParams = {
   minalzada?: string
   maxalzada?: string
 }
+
+export type Measurement = 'cm' | 'años' | '$'
