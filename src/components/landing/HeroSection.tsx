@@ -12,10 +12,10 @@ export default function Hero() {
     <section
       ref={ref}
       id="intro"
-      className={`flex flex-col scroll-m-[1000rem]  justify-center md:mt-[4.5rem]
+      className={`flex flex-col scroll-m-[1000rem] xl:scroll-m-[1000rem]  md:scroll-m-[-1rem]  justify-center md:mt-[4.5rem]
        gap-5 md:gap-[3rem] xl:gap-[10rem] items-center h-[91.5vh] md:h-[93vh] xl:h-[92.05vh] mb-32 `}>
       <section className="flex flex-col xl:flex-row  items-center text-left xl:items-center gap-6 xl:gap-[7rem]">
-        <article className="flex flex-col px-3  gap-5">
+        <article className="flex flex-col px-3  gap-2  xl:gap-5">
           <p className="text-2xl LandingSubTitle" >Bienvenidos</p>
           <h1 className="LandingTitle font-bold text-5xl md:text-5xl">
             Gz Ecuestre
