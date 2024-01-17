@@ -65,8 +65,22 @@ export const useUrlSearchParams = () => {
     return false
   }
 
+  const deleteProvince = (province: string) => {
+    const currentProvinces = params.get('provinces')
+    let splitedProvinces = []
+    if (currentProvinces?.includes('&')) {
+      splitedProvinces = currentProvinces.split('&')
+      const filteredProvinces = splitedProvinces.filter((current) => province !== current)
+      return setFilter({ name: 'provinces', value: filteredProvinces.join('&') })
+    }
+    if (currentProvinces?.length) {
+      deleteFilter({ name: 'provinces' })
+    }
+  }
+
   return {
     setFilter,
+    deleteProvince,
     deleteFilter,
     setPage,
     getCurrentPage,
