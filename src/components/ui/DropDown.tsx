@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ScrollArea } from "./scroll-area"
-
+import { cn } from "@/lib/utils"
 import { useUrlSearchParams } from "@/lib/hooks"
 import { FaChevronDown } from "react-icons/fa"
 import FilterBadge from "../filters/FilterBadges"
@@ -21,9 +21,10 @@ type Option = {
 type DropDown2Props = {
   name: string
   items: Option[]
+  vertical?: boolean
 }
 
-export default function DropDown2({ name, items }: DropDown2Props) {
+export default function DropDown2({ name, items, vertical }: DropDown2Props) {
 
   const { setFilter, getActiveFilter } = useUrlSearchParams()
   const currentValue = getActiveFilter(name)
@@ -32,7 +33,7 @@ export default function DropDown2({ name, items }: DropDown2Props) {
   return (
 
     <DropdownMenu>
-      <div className="flex flex-col gap-7">
+      <div className={cn("flex flex-col gap-7", { "flex-row": !vertical })}>
         <DropdownMenuTrigger
           className="capitalize flex items-center gap-2 text-xl text-gray-600 border ps-3 py-1 px-1 border-none bg-blanco/50 rounded-xl">
           {name}<FaChevronDown />

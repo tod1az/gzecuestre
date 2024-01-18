@@ -13,7 +13,6 @@ import { FaChevronDown } from "react-icons/fa"
 import { IoIosCloseCircle } from "react-icons/io";
 import { Provinces } from "@/lib/data"
 import { useState } from 'react'
-import { Input } from "../ui/input"
 
 export default function ProvinceFilter() {
   const name = {
@@ -22,8 +21,6 @@ export default function ProvinceFilter() {
   }
   const { setFilter, getActiveFilter } = useUrlSearchParams()
   const currentValue = getActiveFilter(name.internal)
-  const [visibleProvinces, setVisibleProvinces] = useState(Provinces)
-
 
   const handleSelect = (value: string) => {
     if (!currentValue) {
@@ -34,20 +31,13 @@ export default function ProvinceFilter() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value.toLowerCase()
-    if (query === '') {
-      return setVisibleProvinces(Provinces)
-    }
-    setVisibleProvinces(previous => previous.filter((province) => province.name.toLowerCase().includes(query)))
-  }
 
   return (
 
     <DropdownMenu>
-      <div className="flex flex-col gap-7">
+      <div className="flex flex-col gap-3 ">
         <DropdownMenuTrigger
-          className="capitalize flex w-[9rem] items-center gap-2 text-xl text-gray-600 border ps-3 py-1 px-1 border-none bg-blanco/50 rounded-xl">
+          className="capitalize flex w-[9rem] h-[2.5rem] items-center gap-2 text-xl text-gray-600 border ps-3 py-1 px-1 border-none bg-blanco/50 rounded-xl">
           {name.external}<FaChevronDown />
         </DropdownMenuTrigger>
         {
@@ -61,7 +51,7 @@ export default function ProvinceFilter() {
         <DropdownMenuSeparator className="bg-black/15" />
         <ScrollArea className="h-[10rem]">
           {
-            visibleProvinces.map((province) => (
+            Provinces.map((province) => (
               <DropdownMenuItem
                 key={province.id}
                 onClick={() => handleSelect(province.id)
@@ -104,7 +94,7 @@ function ProvinceFilterBadge({ province }: { province: string }) {
   const { deleteProvince } = useUrlSearchParams()
   return (
     <div
-      className="text-xs font-bold w-max flex items-center justify-center gap-2 px-2 pr-0  bg-orange-100 text-gray-600 rounded-full capitalize">
+      className="text-xs font-bold h-[1.5rem] w-max whitespace-nowrap flex items-center justify-center gap-2 px-2 pr-0  bg-orange-100 text-gray-600 rounded-full capitalize">
       {province}
       <button
         className="text-2xl"
