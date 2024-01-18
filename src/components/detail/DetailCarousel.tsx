@@ -13,11 +13,10 @@ import {
 } from "@/components/ui/card"
 
 type DetailCarouselProps = {
-  name: string
   items: ({ imageRoute: string })[]
 }
 
-export default function DetailCarousel({ items, name }: DetailCarouselProps) {
+export default function DetailCarousel({ items }: DetailCarouselProps) {
   return (
     <Carousel
       opts={{

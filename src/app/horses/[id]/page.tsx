@@ -22,7 +22,7 @@ export default async function Page({ params }: PageProps) {
       <NavBar />
       <section className="flex flex-col w-3/4   md:gap-y-8  mb-[6rem]  items-center">
         <div className="w-full">
-          <DetailCarousel items={featuredHorses} name={horse.name} />
+          <DetailCarousel items={featuredHorses} />
         </div>
         <div className="flex flex-col  justify-between items-center md:pr-16 md:pl-2 w-full">
           <div className="flex-col flex  justify-center gap-6  pt-6">
