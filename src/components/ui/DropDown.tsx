@@ -7,6 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { ScrollArea } from "./scroll-area"
 
 import { useUrlSearchParams } from "@/lib/hooks"
 import { FaChevronDown } from "react-icons/fa"
@@ -26,7 +27,8 @@ export default function DropDown2({ name, items }: DropDown2Props) {
 
   const { setFilter, getActiveFilter } = useUrlSearchParams()
   const currentValue = getActiveFilter(name)
-
+  const itemsLength = items.length
+  console.log(itemsLength)
 
   return (
 
@@ -48,15 +50,37 @@ export default function DropDown2({ name, items }: DropDown2Props) {
         <DropdownMenuLabel className="capitalize">{name}</DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-black/15" />
         {
-          items.map((item) => (
-            <DropdownMenuItem
-              className="capitalize"
-              key={item.id}
-              onClick={() => setFilter({ name, value: item.name })}
-            >
-              {item.name}
-            </DropdownMenuItem>
-          ))
+          itemsLength > 5
+            ? (
+              <ScrollArea className="h-[10rem]">
+                {
+                  items.map((item) => (
+                    <DropdownMenuItem
+                      className="capitalize"
+                      key={item.id}
+                      onClick={() => setFilter({ name, value: item.name })}
+                    >
+                      {item.name}
+                    </DropdownMenuItem>
+                  ))
+                }
+              </ScrollArea>
+            )
+            : (
+              <>
+                {
+                  items.map((item) => (
+                    <DropdownMenuItem
+                      className="capitalize"
+                      key={item.id}
+                      onClick={() => setFilter({ name, value: item.name })}
+                    >
+                      {item.name}
+                    </DropdownMenuItem>
+                  ))
+                }
+              </>
+            )
         }
       </DropdownMenuContent>
     </DropdownMenu>
