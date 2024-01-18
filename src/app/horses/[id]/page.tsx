@@ -1,5 +1,5 @@
 import { getHorse } from "@/lib/querys"
-import WhatsAppLogo from "@/components/logos/WhatsAppLogo"
+import { FaWhatsapp } from "react-icons/fa";
 import { LuMailPlus } from "react-icons/lu"
 import Link from "next/link"
 import { Horse } from "@/lib/types"
@@ -28,10 +28,10 @@ export default async function Page({ params }: PageProps) {
           <div className="flex-col flex  justify-center gap-6  pt-6">
             <h1 className="pl-2 text-4xl md:text-5xl font-bold text-negro" >{horse.name}</h1>
             <p className="font-bold text-3xl">{`$${horse.price}`}</p>
+            <Contact email={horse.email} name={horse.name} number={horse.number} />
             <p className="text-pretty text-sm md:text-lg">{horse.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim, a vel ratione id, voluptas aspernatur tenetur numquam eaque ab debitis quasi dolorum, error nobis repellendus architecto nam reiciendis repudiandae!</p>
             <Atributtes horse={horse} />
           </div>
-          <Contact email={horse.email} name={horse.name} number={horse.number} />
         </div>
       </section>
     </main>
@@ -46,18 +46,16 @@ type ContactProps = {
 
 function Contact({ number, email, name }: ContactProps) {
   return (
-    <section className="flex flex-col items-center pt-5">
-      <div className="flex items-center gap-[5rem] md:gap-[10rem]">
+    <section className="flex flex-col  items-center pt-2">
+      <div className="flex items-center justify-between md:justify-start w-full md:gap-[10rem]">
         <Link
-          className="hover:scale-110 md:hover:scale-105 transition-transform "
+          className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
           target="_blank"
           href={`https://wa.me/${number}?text=Hola! Quisiera saber más sobre ${name} publicado en Gz Ecuestre`}
         >
-          <div className="hidden md:block">
-            <WhatsAppLogo size="80" />
-          </div>
-          <div className="block md:hidden">
-            <WhatsAppLogo size="60" />
+          WhatsApp
+          <div className="text-xl">
+            <FaWhatsapp />
           </div>
         </Link>
         <Link
@@ -65,7 +63,7 @@ function Contact({ number, email, name }: ContactProps) {
           href={`mailto:${email}?subject=Publicación Gz Ecuestre`}
           className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
         >
-          Contactar  <LuMailPlus />
+          Email  <LuMailPlus />
         </Link>
       </div>
     </section>
