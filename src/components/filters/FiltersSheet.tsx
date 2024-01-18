@@ -1,4 +1,3 @@
-'use client'
 import {
   Sheet,
   SheetContent,
@@ -8,11 +7,9 @@ import { FcMenu } from "react-icons/fc"
 import SearchBar from "../SearchBar"
 import ActiveQuery from "./ActiveQuery"
 import FilterList from "./FilterList"
-import { usePathname } from "next/navigation"
+
 
 export default function FiltersSheet() {
-  const path = usePathname()
-  if (path.startsWith('/horses')) return <div />
   return (
     <Sheet>
       <SheetTrigger asChild>
