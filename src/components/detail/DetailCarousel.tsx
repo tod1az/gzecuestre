@@ -11,9 +11,6 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card"
-import Video from "./Video"
-
-
 
 type DetailCarouselProps = {
   name: string
@@ -46,16 +43,6 @@ export default function DetailCarousel({ items, name }: DetailCarouselProps) {
             </CarouselItem>
           ))
         }
-        <CarouselItem className="rounded-lg">
-          <Card className="bg-black border-none  flex justify-center ">
-            <CardContent className="w-auto  h-[25rem] hidden md:block">
-              <Video id={'P4jKxFhnjAU'} name={name} height="400" width="600" />
-            </CardContent>
-            <CardContent className="w-auto pt-10 h-[15rem] md:hidden">
-              <Video id={'P4jKxFhnjAU'} name={name} height="150" width="300" />
-            </CardContent>
-          </Card>
-        </CarouselItem>
       </CarouselContent>
       <CarouselPrevious className="hidden md:flex md:items-center" />
       <CarouselNext className="hidden md:flex md:items-center" />
