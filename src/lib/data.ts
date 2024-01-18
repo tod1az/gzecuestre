@@ -8,7 +8,8 @@ export const horses = [
     description: 'A majestic Pura Sangre horse named Relámpago, 5 years old and male.',
     email: 'relampago@example.com',
     number: '+1234567890',
-    price: 5000
+    price: 5000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'ea7',
@@ -19,7 +20,8 @@ export const horses = [
     description: 'An elegant Árabe horse named Esmeralda, 7 years old and female.',
     email: 'esmeralda@example.com',
     number: '+1987654321',
-    price: 7000
+    price: 7000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'ca4',
@@ -30,7 +32,8 @@ export const horses = [
     description: 'A vibrant Appaloosa horse named Centella, 4 years old and male.',
     email: 'centella@example.com',
     number: '+1122334455',
-    price: 4000
+    price: 4000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'rt6',
@@ -41,7 +44,8 @@ export const horses = [
     description: 'A speedy Trotón Francés horse named Rayo, 6 years old and male.',
     email: 'rayo@example.com',
     number: '+447700900000',
-    price: 6000
+    price: 6000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'ab8',
@@ -52,7 +56,8 @@ export const horses = [
     description: 'A noble Andaluz horse named Azabache, 8 years old and male.',
     email: 'azabache@example.com',
     number: '+15551234567',
-    price: 8000
+    price: 8000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'ma3',
@@ -63,7 +68,8 @@ export const horses = [
     description: 'A free-spirited Mustang horse named Mariposa, 3 years old and female.',
     email: 'mariposa@example.com',
     number: '+61412345678',
-    price: 3000
+    price: 3000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'na5',
@@ -74,7 +80,8 @@ export const horses = [
     description: 'A graceful Frisón horse named Nube, 5 years old and female.',
     email: 'nube@example.com',
     number: '+81345678901',
-    price: 5000
+    price: 5000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'sa4',
@@ -85,7 +92,8 @@ export const horses = [
     description: 'A powerful Shire horse named Sable, 4 years old and male.',
     email: 'sable@example.com',
     number: '+27824567890',
-    price: 4000
+    price: 4000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'li6',
@@ -96,7 +104,8 @@ export const horses = [
     description: 'An elegant Lipizzan horse named Lluvia, 6 years old and female.',
     email: 'lluvia@example.com',
     number: '+61234567890',
-    price: 6000
+    price: 6000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'do2',
@@ -107,7 +116,8 @@ export const horses = [
     description: 'A spirited Dales horse named Dorado, 2 years old and male.',
     email: 'dorado@example.com',
     number: '+81334567890',
-    price: 2000
+    price: 2000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'th7',
@@ -118,7 +128,8 @@ export const horses = [
     description: 'A swift Thoroughbred horse named Thunder, 7 years old and male.',
     email: 'thunder@example.com',
     number: '+447712345678',
-    price: 7000
+    price: 7000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'wi4',
@@ -129,7 +140,8 @@ export const horses = [
     description: 'A gentle Clydesdale horse named Wind, 4 years old and female.',
     email: 'wind@example.com',
     number: '+15552345678',
-    price: 4000
+    price: 4000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'st5',
@@ -140,7 +152,8 @@ export const horses = [
     description: 'A strong Standardbred horse named Storm, 5 years old and male.',
     email: 'storm@example.com',
     number: '+61421112222',
-    price: 5000
+    price: 5000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'qu3',
@@ -151,7 +164,8 @@ export const horses = [
     description: 'A lively Quarter Horse named Quasar, 3 years old and female.',
     email: 'quasar@example.com',
     number: '+1234567890',
-    price: 3000
+    price: 3000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'sp6',
@@ -162,7 +176,8 @@ export const horses = [
     description: 'A spirited Spanish Mustang named Spark, 6 years old and male.',
     email: 'spark@example.com',
     number: '+447700900000',
-    price: 6000
+    price: 6000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'su4',
@@ -173,7 +188,8 @@ export const horses = [
     description: 'A charming Suffolk Punch horse named Sunrise, 4 years old and female.',
     email: 'sunrise@example.com',
     number: '+15551234567',
-    price: 4000
+    price: 4000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'ch5',
@@ -184,7 +200,8 @@ export const horses = [
     description: 'A champion Cleveland Bay horse named Champion, 5 years old and male.',
     email: 'champion@example.com',
     number: '+61412345678',
-    price: 5000
+    price: 5000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'br7',
@@ -195,7 +212,8 @@ export const horses = [
     description: 'A gentle Brabant horse named Breeze, 7 years old and female.',
     email: 'breeze@example.com',
     number: '+81345678901',
-    price: 7000
+    price: 7000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'gl4',
@@ -206,7 +224,8 @@ export const horses = [
     description: 'A majestic Gypsy Vanner horse named Glacier, 4 years old and male.',
     email: 'glacier@example.com',
     number: '+27824567890',
-    price: 4000
+    price: 4000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   },
   {
     id: 'wi8',
@@ -217,7 +236,8 @@ export const horses = [
     description: 'A playful Welsh Pony named Winter, 8 years old and female.',
     email: 'winter@example.com',
     number: '+61234567890',
-    price: 8000
+    price: 8000,
+    videos: ['1Kb7q8aFsGY', 'PXPD8fPQR3Y', 'fGmqygnf9EQ']
   }
 ]
 

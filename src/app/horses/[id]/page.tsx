@@ -6,6 +6,7 @@ import { Horse } from "@/lib/types"
 import DetailCarousel from "@/components/detail/DetailCarousel"
 import { featuredHorses } from "@/lib/data"
 import NavBar from "@/components/NavBar"
+import VideoCarousel from "@/components/detail/VideoCarousel";
 
 type PageProps = {
   params: {
@@ -26,12 +27,15 @@ export default async function Page({ params }: PageProps) {
         </div>
         <div className="flex flex-col  justify-between items-center md:pr-16 md:pl-2 w-full">
           <div className="flex-col flex  justify-center gap-6  pt-6">
-            <h1 className="pl-2 text-4xl md:text-5xl font-bold text-negro" >{horse.name}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-negro" >{horse.name}</h1>
             <p className="font-bold text-3xl">{`$${horse.price}`}</p>
             <Contact email={horse.email} name={horse.name} number={horse.number} />
             <p className="text-pretty text-sm md:text-lg">{horse.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim, a vel ratione id, voluptas aspernatur tenetur numquam eaque ab debitis quasi dolorum, error nobis repellendus architecto nam reiciendis repudiandae!</p>
             <Atributtes horse={horse} />
           </div>
+        </div>
+        <div className="w-full mt-12">
+          <VideoCarousel items={horse.videos} name={horse.name} />
         </div>
       </section>
     </main>
