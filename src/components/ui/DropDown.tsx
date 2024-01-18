@@ -28,7 +28,6 @@ export default function DropDown2({ name, items }: DropDown2Props) {
   const { setFilter, getActiveFilter } = useUrlSearchParams()
   const currentValue = getActiveFilter(name)
   const itemsLength = items.length
-  console.log(itemsLength)
 
   return (
 
