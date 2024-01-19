@@ -12,6 +12,7 @@ import { useEffect, useState } from "react"
 import { useUrlSearchParams } from "@/lib/hooks"
 import { cn } from "@/lib/utils"
 import FilterBadge from "./FilterBadges"
+import { Separator } from "../ui/separator"
 
 type Measurement = 'cm' | 'años' | '$'
 
@@ -57,9 +58,11 @@ export default function DialogRange({ name, maxRange, step, measurement }: Dialo
 
   return (
     <Popover open={open} >
-      <div className="flex gap-2">
-        <PopoverTrigger asChild className="text-xl capitalize text-gray-600  px-3 py-1   bg-blanco/50 rounded-xl">
-          <button onClick={() => setOpen(!open)} >
+      <div className="flex gap-2 items-center">
+        <PopoverTrigger
+          asChild className="text-xl capitalize text-gray-600  px-3 py-1   bg-blanco/50 rounded-xl">
+          <button
+            onClick={() => setOpen(!open)} >
             {name}
           </button>
         </PopoverTrigger>
@@ -70,9 +73,14 @@ export default function DialogRange({ name, maxRange, step, measurement }: Dialo
             </FilterBadge>)
         }
       </div>
-      <PopoverContent className="sm:max-w-[425px] ml-4 LandingSubTitle bg-orange-100">
-        <h2 className="capitalize" >{name}</h2>
-        <section className="grid gap-4 py-4">
+      <PopoverContent
+        onInteractOutside={() => {
+          setOpen(false)
+        }}
+        className="sm:max-w-[425px] flex flex-col items-start w-[14rem] ml-4 LandingSubTitle bg-blanco">
+        <h2 className="capitalize font-bold w-full text-center" >{name}</h2>
+        <Separator className="bg-black/20" />
+        <section className="grid gap-6 w-full py-4 px-0">
           <Label>
             <SliderValue max={false} measurement={measurement} value={min} />
           </Label>
@@ -86,7 +94,7 @@ export default function DialogRange({ name, maxRange, step, measurement }: Dialo
           className={cn("text-red-900 hidden", { "block": validRange === 'invalid' })}>
           El rango ingresado no es valido, intente nuevamente
         </small>
-        <Button className="bg-orange-500" onClick={handleSave} type="submit">Guardar cambios</Button>
+        <Button className="bg-orange-500 w-full mt-3" onClick={handleSave} type="submit">Guardar cambios</Button>
       </PopoverContent>
     </Popover>
   )
