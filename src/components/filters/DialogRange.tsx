@@ -8,7 +8,7 @@ import {
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { FilterSlider } from "./FilterSlider"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useUrlSearchParams } from "@/lib/hooks"
 import { cn } from "@/lib/utils"
 import FilterBadge from "./FilterBadges"
@@ -48,21 +48,21 @@ export default function DialogRange({ name, maxRange, step, measurement }: Dialo
     }
   }
 
-  useEffect(() => {
-    if (!open) {
-      setMin('0')
-      setMax('0')
-      setValidRange('default')
-    }
-  }, [open])
-
   return (
-    <Popover open={open} >
+    <Popover
+      open={open}
+      modal
+      onOpenChange={() => {
+        setMin('0')
+        setMax('0')
+        setValidRange('default')
+      }}
+    >
       <div className="flex gap-2 items-center">
         <PopoverTrigger
+          onClick={() => setOpen(true)}
           asChild className="text-xl capitalize text-gray-600  px-3 py-1   bg-blanco/50 rounded-xl">
-          <button
-            onClick={() => setOpen(!open)} >
+          <button>
             {name}
           </button>
         </PopoverTrigger>
@@ -74,9 +74,7 @@ export default function DialogRange({ name, maxRange, step, measurement }: Dialo
         }
       </div>
       <PopoverContent
-        onInteractOutside={() => {
-          setOpen(false)
-        }}
+        onInteractOutside={() => setOpen(false)}
         className="sm:max-w-[425px] flex flex-col items-start w-[14rem] ml-4 LandingSubTitle bg-blanco">
         <h2 className="capitalize font-bold w-full text-center" >{name}</h2>
         <Separator className="bg-black/20" />
