@@ -5,6 +5,7 @@ import { Orders } from "@/lib/data";
 import ProvinceFilter from "./ProvinceFilter";
 import { getBreeds } from "@/lib/querys";
 import { Separator } from "../ui/separator";
+import FilterHoverCard from "./FilterHoverInfo";
 
 export default async function FilterList() {
   const breeds = await getBreeds()
@@ -16,7 +17,9 @@ export default async function FilterList() {
         <li><DropDown2 items={Orders} name="orden" vertical /></li>
       </ul>
       <Separator className="bg-black/20" />
-      <li><ProvinceFilter /></li>
+      <li>
+        <ProvinceFilter />
+      </li>
       <Separator className="bg-black/20" />
       <li><DropDown2 items={breeds} name="raza" /></li>
       <Separator className="bg-black/20" />

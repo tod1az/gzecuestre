@@ -12,7 +12,9 @@ import { useUrlSearchParams } from "@/lib/hooks"
 import { FaChevronDown } from "react-icons/fa"
 import { IoIosCloseCircle } from "react-icons/io";
 import { Provinces } from "@/lib/data"
-import { useState } from 'react'
+import { IoMdInformationCircleOutline } from "react-icons/io";
+import FilterHoverCard from "./FilterHoverInfo"
+
 
 export default function ProvinceFilter() {
   const name = {
@@ -36,10 +38,18 @@ export default function ProvinceFilter() {
 
     <DropdownMenu>
       <div className="flex flex-col gap-3 ">
-        <DropdownMenuTrigger
-          className="capitalize flex w-[9rem] h-[2.5rem] items-center gap-2 text-xl text-gray-600 border ps-3 py-1 px-1 border-none bg-blanco/50 rounded-xl">
-          {name.external}<FaChevronDown />
-        </DropdownMenuTrigger>
+        <div className="flex items-center gap-1">
+          <DropdownMenuTrigger
+            className="capitalize flex w-[9rem] h-[2.5rem] items-center gap-2 text-xl text-gray-600 border ps-3 py-1 px-1 border-none bg-blanco/50 rounded-xl">
+            {name.external}
+            <FaChevronDown />
+          </DropdownMenuTrigger>
+          <div className="text-gray-600 text-xl bg-blanco/50 flex rounded-full">
+            <FilterHoverCard>
+              <IoMdInformationCircleOutline />
+            </FilterHoverCard>
+          </div>
+        </div>
         {
           currentValue && <BadgeList items={currentValue} />
         }
