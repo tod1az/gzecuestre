@@ -7,7 +7,7 @@ export function FilterSlider({ className, ...props }: SliderProps) {
   return (
     <Slider
       defaultValue={[0]}
-      className={cn("w-[90%]", className)}
+      className={cn("w-full", className)}
       {...props}
     />
   )
