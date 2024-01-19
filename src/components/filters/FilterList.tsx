@@ -11,7 +11,7 @@ export default async function FilterList() {
   return (
     <ul className="flex flex-col w-full  gap-4 justify-center items-start">
       <Separator className="bg-black/20" />
-      <ul className="flex gap-[4rem]">
+      <ul className="flex gap-[3rem]">
         <li><DropDown2 items={Sexos} name="sexo" vertical /></li>
         <li><DropDown2 items={Orders} name="orden" vertical /></li>
       </ul>
@@ -27,6 +27,7 @@ export default async function FilterList() {
       <li><DialogRange name="alzada" measurement="cm" step={1} maxRange={200} /></li>
       <Separator className="bg-black/20" />
       <li><DialogRange name="salto" measurement="cm" step={5} maxRange={160} /></li>
+      <Separator className="bg-black/20" />
     </ul>
   )
 }
