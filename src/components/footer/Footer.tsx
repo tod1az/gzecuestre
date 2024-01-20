@@ -16,16 +16,24 @@ export function Footer() {
           </Link>
         </nav>
         <div className="flex items-center space-x-4">
-          <Link className="LandingSubTitle hover:text-blue-500" href="#">
+          <Link
+            aria-label="Facebook Link"
+            className="LandingSubTitle hover:text-blue-500" href="#">
             <FacebookIcon className="h-6 w-6" />
           </Link>
-          <Link className="LandingSubTitle hover:text-pink-500" href="#">
+          <Link
+            aria-label="Instagram Link"
+            className="LandingSubTitle hover:text-pink-500" href="#">
             <InstagramIcon className="h-6 w-6" />
           </Link>
-          <Link className="LandingSubTitle hover:text-blue-400" href="#">
+          <Link
+            aria-label="Twitter Link"
+            className="LandingSubTitle hover:text-blue-400" href="#">
             <TwitterIcon className="h-6 w-6" />
           </Link>
-          <Link className="LandingSubTitle hover:text-red-600" href="#">
+          <Link
+            aria-label="Youtube Link"
+            className="LandingSubTitle hover:text-red-600" href="#">
             <YoutubeIcon className="h-6 w-6" />
           </Link>
         </div>

@@ -19,6 +19,7 @@ export default function FiltersSheet({ children }: Props) {
   if (path.startsWith('/horses')) {
     return (
       <button
+        aria-label="Back Button"
         onClick={() => back()}
         className="ml-3 md:ml-4 text-lg flex gap-0 md:gap-2 text-gray-600 items-center hover:underline hover:text-negro" >
         <IoArrowBack /> Volver
@@ -28,7 +29,10 @@ export default function FiltersSheet({ children }: Props) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button className="ml-4 text-4xl">
+        <button
+          aria-label="Back Button"
+          className="ml-4 text-4xl"
+        >
           <FcMenu />
         </button>
       </SheetTrigger>

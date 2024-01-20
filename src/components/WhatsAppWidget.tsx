@@ -8,6 +8,7 @@ type Props = {
 export default function WhatsAppWidget({ href }: Props) {
   return (
     <Link
+      aria-label="WhatsApp Contact Link"
       href={href}
       target="_blank"
       className={`fixed flex items-center hover:scale-125 transition-transform
