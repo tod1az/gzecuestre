@@ -2,19 +2,19 @@ import { Skeleton } from "../ui/skeleton";
 
 export default function CardsSkeleton() {
   return (
-    <div className="flex flex-wrap mb-10 xl:w-10/12 xl:px-16 justify-center gap-1 md:gap-6">
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
-      <Skeleton className=" h-[20rem] w-[14rem] rounded-xl" />
+    <div className="grid grid-cols-2  gap-[1rem] rounded-lg xl:grid-cols-4 md:grid-cols-3 justify-center gap-x-5  md:gap-x-[1rem] md:gap-y-[1rem]">
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
+      <Skeleton className=" h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] rounded-xl bg-orange-200" />
     </div>
   )
 }
