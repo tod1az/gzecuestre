@@ -20,7 +20,7 @@ export default function FiltersSheet({ children }: Props) {
     return (
       <button
         onClick={() => back()}
-        className="md:ml-4 text-lg flex gap-0 md:gap-2 text-gray-600 items-center hover:underline hover:text-negro" >
+        className="ml-3 md:ml-4 text-lg flex gap-0 md:gap-2 text-gray-600 items-center hover:underline hover:text-negro" >
         <IoArrowBack /> Volver
       </button >
     )
