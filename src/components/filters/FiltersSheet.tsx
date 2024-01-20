@@ -5,7 +5,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { FcMenu } from "react-icons/fc"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
+import { IoArrowBack } from "react-icons/io5";
 
 type Props = {
   children: React.ReactNode
@@ -13,7 +14,17 @@ type Props = {
 
 export default function FiltersSheet({ children }: Props) {
   const path = usePathname()
-  if (path.startsWith('/horses')) return <div />
+  const { back } = useRouter()
+
+  if (path.startsWith('/horses')) {
+    return (
+      <button
+        onClick={() => back()}
+        className="ml-4 text-lg flex gap-2 text-gray-600 items-center hover:underline hover:text-negro" >
+        <IoArrowBack /> Volver
+      </button >
+    )
+  }
   return (
     <Sheet>
       <SheetTrigger asChild>
