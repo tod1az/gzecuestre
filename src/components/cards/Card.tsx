@@ -10,7 +10,7 @@ type CardProps = {
 export default function Card({ horse }: CardProps) {
   return (
     <Link href={`/horses/${horse.id}`}>
-      <article className="group hover:bg-orange-100/50 hover:text-negro transition-colors flex flex-col  text-gris rounded-xl gap-1 text-center h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] bg-blanco shadow-xl overflow-hidden">
+      <article className="group hover:bg-orange-100/50 hover:text-negro transition-colors flex flex-col  text-black/80 rounded-xl gap-1 text-center h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] bg-blanco shadow-xl overflow-hidden">
         <div className="overflow-hidden">
           <Image
             className="md:group-hover:scale-110 object-cover transition-transform w-full h-[7rem] md:h-[9rem]"
