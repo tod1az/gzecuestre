@@ -5,7 +5,6 @@ import Ad from "../ad/Ad"
 import Pagination from "../ui/Pagination"
 import { getAdLocation } from "@/lib/utils"
 import { getHorses } from "@/lib/querys"
-import CardsSkeleton from "../skeletons/CardsSkeleton"
 
 type CardContainerProps = {
   searchParams: HomeSearchParams
