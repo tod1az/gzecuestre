@@ -6,16 +6,18 @@ import SheetContent from "./filters/SheetContent";
 export default function NavBar() {
   return (
     <nav
-      className={`top-0 bg-blanco flex justify-between items-center
+      className={`top-0 bg-blanco flex  justify-start ml-4 gap-[3rem]  md:justify-between items-center
          fixed  h-[4.5rem] text-2xl shadow-xl  w-screen z-[10]`}>
       <FiltersSheet>
         <SheetContent />
       </FiltersSheet>
       <Link
         href={'/'}>
-        <Logo />
+        <div className="w-[10rem] h-auto md:w-[16rem]">
+          <Logo />
+        </div>
       </Link>
-      <div />
+      <div className="hidden md:block" />
     </nav>
   );
 }
