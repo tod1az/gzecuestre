@@ -2,6 +2,7 @@ import { type Horse } from "@/lib/types"
 import Image from "next/image"
 import CardBadge from "./CardBadge"
 import Link from "next/link"
+import { getAge } from "@/lib/utils"
 
 type CardProps = {
   horse: Horse
@@ -27,7 +28,7 @@ export default function Card({ horse }: CardProps) {
         </div>
         <section className="px-7 flex flex-wrap text-center text-nowrap gap-1  md:gap-2 justify-center">
           <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.breed}</CardBadge>
-          <CardBadge className="group-hover:bg-white group-hover:text-black">{`${horse.age} años`}</CardBadge>
+          <CardBadge className="group-hover:bg-white group-hover:text-black">{`${getAge(horse.birthdate)} años`}</CardBadge>
           <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.sex}</CardBadge>
         </section>
       </article>
