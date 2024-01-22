@@ -7,6 +7,7 @@ import DetailCarousel from "@/components/detail/DetailCarousel"
 import { featuredHorses } from "@/lib/data"
 import NavBar from "@/components/NavBar"
 import VideoCarousel from "@/components/detail/VideoCarousel";
+import { getAge } from "@/lib/utils";
 
 type PageProps = {
   params: {
@@ -83,8 +84,11 @@ function Atributtes({ horse }: AtributtesProps) {
   return (
     <section className="text-lg flex flex-col  gap-5 items-start h-auto">
       <p><strong>Raza: </strong>{horse.breed}</p>
-      <p><strong>Edad: </strong>{`${horse.age} años`}</p>
+      <p><strong>Edad: </strong>{`${getAge(horse.birthdate)} años`}</p>
       <p><strong>Sexo: </strong>{horse.sex}</p>
+      <p><strong>Alzada: </strong>{`${horse.alzada}cm`}</p>
+      <p><strong>Satlo: </strong>{`${horse.salto}cm`}</p>
+      <p><strong>Provincia: </strong>{`${horse.provincia}`}</p>
     </section>
   )
 }
