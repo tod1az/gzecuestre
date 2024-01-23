@@ -1,0 +1,21 @@
+export const horseQueryModel = {
+  alzada: true,
+  created_at: true,
+  descripcion: true,
+  destacado: true,
+  disciplina: true,
+  fecha_de_nacimiento: true,
+  nombre: true,
+  nombre_contacto: true,
+  email: true,
+  imagenes: true,
+  id: true,
+  numero: true,
+  precio: true,
+  precio_visible: true,
+  provincia: true,
+  raza: true,
+  salto: true,
+  sex: true,
+  videos: true
+}
