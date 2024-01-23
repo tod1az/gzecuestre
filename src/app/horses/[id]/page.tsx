@@ -2,12 +2,12 @@ import { getHorse } from "@/lib/querys"
 import { FaWhatsapp } from "react-icons/fa";
 import { LuMailPlus } from "react-icons/lu"
 import Link from "next/link"
-import { Horse } from "@/lib/types"
 import DetailCarousel from "@/components/detail/DetailCarousel"
 import { featuredHorses } from "@/lib/data"
 import NavBar from "@/components/NavBar"
 import VideoCarousel from "@/components/detail/VideoCarousel";
 import { getAge } from "@/lib/utils";
+import { Horse } from "@/lib/types";
 
 type PageProps = {
   params: {
@@ -18,7 +18,7 @@ type PageProps = {
 export default async function Page({ params }: PageProps) {
   const { id } = params
   const horse = await getHorse(id)
-  if (!horse) return <h1>Cargando...</h1>
+  if (!horse) return null
   return (
     <main className="flex flex-col bg-gradient-to-l w-screen pt-[6rem]  from-orange-100 to orange-50 items-center">
       <NavBar />
@@ -28,15 +28,15 @@ export default async function Page({ params }: PageProps) {
         </div>
         <div className="flex flex-col  justify-between items-center md:pr-16 md:pl-2 w-full">
           <div className="flex-col flex  justify-center gap-6  pt-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-negro" >{horse.name}</h1>
-            <p className="font-bold text-3xl">{`$${horse.price}`}</p>
-            <Contact email={horse.email} name={horse.name} number={horse.number} />
-            <p className="text-pretty text-sm md:text-lg">{horse.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim, a vel ratione id, voluptas aspernatur tenetur numquam eaque ab debitis quasi dolorum, error nobis repellendus architecto nam reiciendis repudiandae!</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-negro" >{horse.nombre}</h1>
+            <p className="font-bold text-3xl">{`$${horse.precio}`}</p>
+            <Contact email={horse.email} name={horse.nombre} number={horse.numero} />
+            <p className="text-pretty text-sm md:text-lg">{horse.descripcion} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim, a vel ratione id, voluptas aspernatur tenetur numquam eaque ab debitis quasi dolorum, error nobis repellendus architecto nam reiciendis repudiandae!</p>
             <Atributtes horse={horse} />
           </div>
         </div>
         <div className="w-full mt-12">
-          <VideoCarousel items={horse.videos} name={horse.name} />
+          <VideoCarousel items={horse.videos} name={horse.nombre} />
         </div>
       </section>
     </main>
@@ -83,12 +83,12 @@ type AtributtesProps = {
 function Atributtes({ horse }: AtributtesProps) {
   return (
     <section className="text-lg flex flex-col  gap-5 items-start h-auto">
-      <p><strong>Raza: </strong>{horse.breed}</p>
-      <p><strong>Edad: </strong>{`${getAge(horse.birthdate)} años`}</p>
+      <p><strong>Raza: </strong>{horse.raza?.nombre}</p>
+      <p><strong>Edad: </strong>{`${getAge(horse.fecha_de_nacimiento)} años`}</p>
       <p><strong>Sexo: </strong>{horse.sex}</p>
       <p><strong>Alzada: </strong>{`${horse.alzada}cm`}</p>
       <p><strong>Salto: </strong>{`${horse.salto}cm`}</p>
-      <p><strong>Provincia: </strong>{`${horse.provincia}`}</p>
+      <p><strong>Provincia: </strong>{horse.provincia?.nombre}</p>
     </section>
   )
 }
