@@ -49,7 +49,9 @@ export const setFilters = (searchParams: HomeSearchParams) => {
   if (raza) {
     config = {
       ...config,
-      raza: raza
+      raza: {
+        nombre: raza
+      }
     }
   }
   if (sexo) {
