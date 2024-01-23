@@ -11,14 +11,18 @@ import { ScrollArea } from "../ui/scroll-area"
 import { useUrlSearchParams } from "@/lib/hooks"
 import { FaChevronDown } from "react-icons/fa"
 import { IoIosCloseCircle } from "react-icons/io";
-import { Provinces } from "@/lib/data"
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import FilterHoverCard from "./FilterHoverInfo"
 
-
-export default function ProvinceFilter() {
+type ProvinceFilterProps = {
+  provinces: {
+    nombre: string
+    id: string
+  }[]
+}
+export default function ProvinceFilter({ provinces }: ProvinceFilterProps) {
   const name = {
-    internal: 'provinces',
+    internal: '',
     external: 'provincias'
   }
   const { setFilter, getActiveFilter } = useUrlSearchParams()
@@ -61,13 +65,13 @@ export default function ProvinceFilter() {
         <DropdownMenuSeparator className="bg-black/15" />
         <ScrollArea className="h-[10rem]">
           {
-            Provinces.map((province) => (
+            provinces.map((province) => (
               <DropdownMenuItem
                 key={province.id}
                 onClick={() => handleSelect(province.id)
                 }
               >
-                {province.name}
+                {province.nombre}
               </DropdownMenuItem>
             ))
           }

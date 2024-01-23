@@ -48,22 +48,22 @@ export const Links = [
 
 export const Sexos = [
   {
-    id: 1,
-    name: 'macho'
+    id: '1',
+    nombre: 'macho'
   },
   {
-    id: 2,
-    name: 'hembra'
+    id: '2',
+    nombre: 'hembra'
   }
 ]
 
 export const Orders = [
   {
-    id: 9878829347,
-    name: 'menor precio'
+    id: '9878829347',
+    nombre: 'menor precio'
   },
   {
-    id: 9878829123347,
-    name: 'mayor precio'
+    id: '9878829123347',
+    nombre: 'mayor precio'
   }
 ]

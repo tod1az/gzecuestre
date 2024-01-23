@@ -3,12 +3,12 @@ import DropDown2 from "../ui/DropDown";
 import DialogRange from "./DialogRange";
 import { Orders } from "@/lib/data";
 import ProvinceFilter from "./ProvinceFilter";
-import { getBreeds } from "@/lib/querys";
+import { getBreeds, getProvinces } from "@/lib/querys";
 import { Separator } from "../ui/separator";
-import FilterHoverCard from "./FilterHoverInfo";
 
 export default async function FilterList() {
   const breeds = await getBreeds()
+  const provinces = await getProvinces()
   return (
     <ul className="flex flex-col w-full  gap-4 justify-center items-start">
       <Separator className="bg-black/20" />
@@ -18,7 +18,7 @@ export default async function FilterList() {
       </ul>
       <Separator className="bg-black/20" />
       <li>
-        <ProvinceFilter />
+        <ProvinceFilter provinces={provinces} />
       </li>
       <Separator className="bg-black/20" />
       <li><DropDown2 items={breeds} name="raza" /></li>

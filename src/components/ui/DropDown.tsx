@@ -14,8 +14,8 @@ import { FaChevronDown } from "react-icons/fa"
 import FilterBadge from "../filters/FilterBadges"
 
 type Option = {
-  name: string,
-  id: number
+  nombre: string,
+  id: string
 }
 
 type DropDown2Props = {
@@ -24,10 +24,10 @@ type DropDown2Props = {
   vertical?: boolean
 }
 
-export default function DropDown2({ name, items, vertical }: DropDown2Props) {
+export default function DropDown2({ name: nombre, items, vertical }: DropDown2Props) {
 
   const { setFilter, getActiveFilter } = useUrlSearchParams()
-  const currentValue = getActiveFilter(name)
+  const currentValue = getActiveFilter(nombre)
   const itemsLength = items.length
 
   return (
@@ -36,18 +36,18 @@ export default function DropDown2({ name, items, vertical }: DropDown2Props) {
       <div className={cn("flex flex-col gap-7", { "flex-row": !vertical })}>
         <DropdownMenuTrigger
           className="capitalize flex items-center gap-2 text-xl text-gray-600 border ps-3 py-1 px-1 border-none bg-blanco/50 rounded-xl">
-          {name}<FaChevronDown />
+          {nombre}<FaChevronDown />
         </DropdownMenuTrigger>
         {
           !!currentValue && (
-            <FilterBadge name={name}>
+            <FilterBadge name={nombre}>
               {currentValue}
             </FilterBadge>
           )
         }
       </div>
       <DropdownMenuContent className="ml-4 bg-blanco">
-        <DropdownMenuLabel className="capitalize">{name}</DropdownMenuLabel>
+        <DropdownMenuLabel className="capitalize">{nombre}</DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-black/15" />
         {
           itemsLength > 5
@@ -58,9 +58,9 @@ export default function DropDown2({ name, items, vertical }: DropDown2Props) {
                     <DropdownMenuItem
                       className="capitalize"
                       key={item.id}
-                      onClick={() => setFilter({ name, value: item.name })}
+                      onClick={() => setFilter({ name: nombre, value: item.nombre })}
                     >
-                      {item.name}
+                      {item.nombre}
                     </DropdownMenuItem>
                   ))
                 }
@@ -73,9 +73,9 @@ export default function DropDown2({ name, items, vertical }: DropDown2Props) {
                     <DropdownMenuItem
                       className="capitalize"
                       key={item.id}
-                      onClick={() => setFilter({ name, value: item.name })}
+                      onClick={() => setFilter({ name: nombre, value: item.nombre })}
                     >
-                      {item.name}
+                      {item.nombre}
                     </DropdownMenuItem>
                   ))
                 }

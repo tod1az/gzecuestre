@@ -15,7 +15,7 @@ export default function FilterHoverInfo({ children }: FilterHoverCardProps) {
       <Tooltip>
         <TooltipTrigger>{children}</TooltipTrigger>
         <TooltipContent className="bg-blanco text-gray-600">
-          <p>Puede seleccionar más de una provincia</p>
+          <p>Puedes seleccionar más de una provincia</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
