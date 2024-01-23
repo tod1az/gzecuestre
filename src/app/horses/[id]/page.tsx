@@ -87,7 +87,7 @@ function Atributtes({ horse }: AtributtesProps) {
       <p><strong>Edad: </strong>{`${getAge(horse.birthdate)} años`}</p>
       <p><strong>Sexo: </strong>{horse.sex}</p>
       <p><strong>Alzada: </strong>{`${horse.alzada}cm`}</p>
-      <p><strong>Satlo: </strong>{`${horse.salto}cm`}</p>
+      <p><strong>Salto: </strong>{`${horse.salto}cm`}</p>
       <p><strong>Provincia: </strong>{`${horse.provincia}`}</p>
     </section>
   )
