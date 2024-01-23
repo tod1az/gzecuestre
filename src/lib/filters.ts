@@ -1,40 +1,11 @@
 import { type HomeSearchParams } from './types'
-type FilterPropertys = {
-  name?: {
-    contains: string
-    mode: string
-  }
-  sex?: string
-  province?: {
-    contains: string
-    mode: string
-  }
-  breed?: string
-  age?: {
-    gte: Date
-    lte: Date
-  }
-  price?: {
-    gte: number
-    lte: number
-  }
-  height?: {
-    gte: number
-    lte: number
-  }
-  jump?: {
-    gte: number
-    lte: number
-  }
-}
-
 export const setFilters = (searchParams: HomeSearchParams) => {
   const { maxalzada, minalzada, maxedad, minedad, maxprecio, minprecio, provinces, raza, sexo, query, maxsalto, minsalto } = searchParams
-  let config: FilterPropertys = {}
+  let config = {}
   if (maxalzada && minalzada) {
     config = {
       ...config,
-      height: {
+      alzada: {
         gte: Number(minalzada),
         lte: Number(maxalzada)
       }
@@ -43,7 +14,7 @@ export const setFilters = (searchParams: HomeSearchParams) => {
   if (minsalto && maxsalto) {
     config = {
       ...config,
-      jump: {
+      salto: {
         gte: Number(minsalto),
         lte: Number(maxsalto)
       }
@@ -52,7 +23,7 @@ export const setFilters = (searchParams: HomeSearchParams) => {
   if (minedad && maxedad) {
     config = {
       ...config,
-      age: {
+      birthdate: {
         gte: getDate(Number(minedad)),
         lte: getDate(Number(maxedad))
       }
@@ -70,28 +41,30 @@ export const setFilters = (searchParams: HomeSearchParams) => {
   if (provinces) {
     config = {
       ...config,
-      province: {
-        contains: getProvinces(provinces),
-        mode: 'insensitive'
+      provincia: {
+        search: formatProvinces(provinces)
       }
     }
   }
   if (raza) {
     config = {
       ...config,
-      breed: raza
+      raza: raza
     }
   }
   if (sexo) {
     config = {
       ...config,
-      sex: sexo
+      sex: {
+        contains: sexo,
+        mode: 'insensitive'
+      }
     }
   }
   if (query) {
     config = {
       ...config,
-      name: {
+      nombre: {
         contains: query,
         mode: 'insensitive'
       }
@@ -106,7 +79,10 @@ function getDate(age: number) {
   return searchedDate
 }
 
-function getProvinces(provinces: string) {
-  if (!provinces.includes('&')) return provinces
+function formatProvinces(provinces: string) {
+  console.log(provinces)
+  if (!provinces.includes('&')) {
+    return provinces
+  }
   return provinces.split('&').join('|')
 }
