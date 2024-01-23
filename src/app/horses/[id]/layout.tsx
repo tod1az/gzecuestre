@@ -10,7 +10,7 @@ export async function generateMetadata(
   const id = params.id
   const horse = await getHorse(id)
   return {
-    title: `GZ ECUESTRE | ${horse?.name}`
+    title: `GZ ECUESTRE | ${horse?.nombre}`
   }
 }
 

@@ -30,7 +30,7 @@ export default async function Page({ params }: PageProps) {
           <div className="flex-col flex  justify-center gap-6  pt-6">
             <h1 className="text-4xl md:text-5xl font-bold text-negro" >{horse.nombre}</h1>
             <p className="font-bold text-3xl">{`$${horse.precio}`}</p>
-            <Contact email={horse.email} name={horse.nombre} number={horse.numero} />
+            <Contact email={horse.email} name={horse.nombre} number={horse.numero} contactName={horse.nombre_contacto} />
             <p className="text-pretty text-sm md:text-lg">{horse.descripcion} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim, a vel ratione id, voluptas aspernatur tenetur numquam eaque ab debitis quasi dolorum, error nobis repellendus architecto nam reiciendis repudiandae!</p>
             <Atributtes horse={horse} />
           </div>
@@ -47,16 +47,18 @@ type ContactProps = {
   email: string,
   number: string,
   name: string
+  contactName: string
 }
 
-function Contact({ number, email, name }: ContactProps) {
+function Contact({ number, email, name, contactName }: ContactProps) {
   return (
-    <section className="flex flex-col  items-center pt-2">
+    <section className="flex flex-col gap-2 items-center pt-2">
+      <p className="w-full text-left text-lg"><strong>Nombre de contacto: </strong>{contactName}</p>
       <div className="flex items-center justify-between md:justify-start w-full md:gap-[10rem]">
         <Link
           className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
           target="_blank"
-          href={`https://wa.me/${number}?text=Hola! Quisiera saber más sobre ${name} publicado en Gz Ecuestre`}
+          href={`https://wa.me/${number}?text=Hola ${contactName} ! Quisiera saber más sobre ${name} publicado en Gz Ecuestre`}
         >
           WhatsApp
           <div className="text-xl">
