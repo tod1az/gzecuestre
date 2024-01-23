@@ -115,12 +115,12 @@ function SliderValue({ measurement, max, value }: SliderValueProps) {
   if (measurement === "cm") {
     return max
       ? `${maxText}${value}${measurement}`
-      : `${maxText}${value}${measurement}`
+      : `${minText}${value}${measurement}`
   }
   if (measurement === "años") {
     return max
       ? `${maxText}${value} ${measurement}`
-      : `${maxText}${value} ${measurement}`
+      : `${minText}${value} ${measurement}`
   }
 
 
