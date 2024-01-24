@@ -41,7 +41,7 @@ export const setFilters = (searchParams: HomeSearchParams) => {
   if (provinces) {
     config = {
       ...config,
-      provincia: {
+      provinceId: {
         search: format(provinces)
       }
     }
@@ -84,7 +84,7 @@ function getDate(age: number) {
 function format(provincias: string) {
   console.log()
   if (!provincias.includes('&')) {
-    return
+    return provincias
   }
   return provincias.split('&').join('|')
 }

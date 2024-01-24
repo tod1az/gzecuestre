@@ -13,27 +13,31 @@ import { FaChevronDown } from "react-icons/fa"
 import { IoIosCloseCircle } from "react-icons/io";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import FilterHoverCard from "./FilterHoverInfo"
+import { useState } from "react"
+
+type Province = {
+  nombre: string
+  id: string
+}
 
 type ProvinceFilterProps = {
-  provinces: {
-    nombre: string
-    id: string
-  }[]
+  provinces: Province[]
 }
 export default function ProvinceFilter({ provinces }: ProvinceFilterProps) {
   const name = {
-    internal: '',
+    internal: 'provinces',
     external: 'provincias'
   }
   const { setFilter, getActiveFilter } = useUrlSearchParams()
   const currentValue = getActiveFilter(name.internal)
+  console.log(currentValue)
 
-  const handleSelect = (value: string) => {
+  const handleSelect = (province: { nombre: string, id: string }) => {
     if (!currentValue) {
-      return setFilter({ name: name.internal, value })
+      return setFilter({ name: name.internal, value: province.id })
     }
-    if (!currentValue.includes(value)) {
-      return setFilter({ name: name.internal, value: `${currentValue}&${value}` })
+    if (!currentValue.includes(province.id)) {
+      return setFilter({ name: name.internal, value: `${currentValue}&${province.id}` })
     }
   }
 
@@ -55,12 +59,12 @@ export default function ProvinceFilter({ provinces }: ProvinceFilterProps) {
           </div>
         </div>
         {
-          currentValue && <BadgeList items={currentValue} />
+          currentValue && <BadgeList items={currentValue} provinces={provinces} />
         }
       </div>
       <DropdownMenuContent className="ml-4 bg-blanco ">
-        <DropdownMenuLabel>
-          Provincias
+        <DropdownMenuLabel className="capitalize">
+          {name.external}
         </DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-black/15" />
         <ScrollArea className="h-[10rem]">
@@ -68,7 +72,7 @@ export default function ProvinceFilter({ provinces }: ProvinceFilterProps) {
             provinces.map((province) => (
               <DropdownMenuItem
                 key={province.id}
-                onClick={() => handleSelect(province.id)
+                onClick={() => handleSelect(province)
                 }
               >
                 {province.nombre}
@@ -82,37 +86,41 @@ export default function ProvinceFilter({ provinces }: ProvinceFilterProps) {
   )
 }
 
-function BadgeList({ items }:
+function BadgeList({ items, provinces }:
   {
     items: string
+    provinces: Province[]
   }) {
   if (!items.length) return null
   if (items.length && !items.includes('&')) {
+    const province = provinces.find((item) => item.id === items)
     return (
-      <ProvinceFilterBadge province={items} />
+      <ProvinceFilterBadge province={province as Province} />
     )
   }
   return (
     <section className="flex flex-wrap gap-2">
       {
-        items.split('&').map((province) => (
-          <ProvinceFilterBadge key={province} province={province} />
-        ))
+        items.split('&').map((id) => {
+          const province = provinces.find((item) => item.id === id)
+          return <ProvinceFilterBadge key={province?.id} province={province as Province} />
+        }
+        )
       }
     </section>
   )
 }
 
 
-function ProvinceFilterBadge({ province }: { province: string }) {
+function ProvinceFilterBadge({ province }: { province: Province }) {
   const { deleteProvince } = useUrlSearchParams()
   return (
     <div
       className="text-xs font-bold h-[1.5rem] w-max whitespace-nowrap flex items-center justify-center gap-2 px-2 pr-0  bg-orange-100 text-gray-600 rounded-full capitalize">
-      {province}
+      {province.nombre}
       <button
         className="text-2xl"
-        onClick={() => deleteProvince(province)}
+        onClick={() => deleteProvince(province.id)}
       >
         <div className="text-amber-700">
           <IoIosCloseCircle />
