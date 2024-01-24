@@ -21,11 +21,14 @@ export const setFilters = (searchParams: HomeSearchParams) => {
     }
   }
   if (minedad && maxedad) {
+    console.log(minedad, maxedad)
+    console.log(getDate(Number(minedad)))
+    console.log(getDate(Number(maxedad)))
     config = {
       ...config,
-      birthdate: {
-        gte: getDate(Number(minedad)),
-        lte: getDate(Number(maxedad))
+      fecha_de_nacimiento: {
+        gte: getDate(Number(maxedad)),
+        lte: getDate(Number(minedad))
       }
     }
   }
@@ -77,7 +80,7 @@ export const setFilters = (searchParams: HomeSearchParams) => {
 
 function getDate(age: number) {
   const currentDate = new Date(Date.now())
-  const searchedDate = new Date(currentDate.getFullYear() - age, currentDate.getMonth(), currentDate.getDate())
+  const searchedDate = new Date(currentDate.getFullYear() - age, currentDate.getMonth(), currentDate.getDay())
   return searchedDate
 }
 
