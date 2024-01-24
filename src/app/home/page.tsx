@@ -4,6 +4,7 @@ import { Suspense } from "react"
 import { HomeSearchParams } from "@/lib/types"
 import { featuredHorses } from '../../lib/data'
 import BannerCarousel from "@/components/BannerCarousel"
+
 type PageProps = {
   searchParams: HomeSearchParams
 }
