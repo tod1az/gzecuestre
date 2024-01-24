@@ -18,6 +18,11 @@ export const getHorses = async (searchParams: HomeSearchParams) => {
   const order = searchParams.orden ?? 'asc'
   const filters = setFilters(searchParams)
   return await prisma.caballo.findMany({
+    orderBy: [
+      {
+        precio: order
+      }
+    ],
     where: filters,
     select: horseQueryModel
   })

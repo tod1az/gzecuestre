@@ -1,4 +1,5 @@
 import { Links } from './data'
+import { Prisma } from '@prisma/client/index'
 
 export type SectionName = (typeof Links)[number]['name']
 
@@ -46,7 +47,7 @@ export type HomeSearchParams = {
   minsalto?: string
   maxsalto?: string
   sexo?: string
-  orden?: string
+  orden?: Prisma.SortOrder
   query?: string
 }
 
