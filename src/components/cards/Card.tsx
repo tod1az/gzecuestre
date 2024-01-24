@@ -9,7 +9,6 @@ type CardProps = {
 }
 
 export default function Card({ horse }: CardProps) {
-  console.log(horse)
   return (
     <Link href={`/horses/${horse.id}`}>
       <article className="group hover:bg-orange-100/50 hover:text-negro transition-colors flex flex-col  text-black/80 rounded-xl gap-1 text-center h-[18rem] w-[11rem]  md:h-[20rem] md:w-[14rem] bg-blanco shadow-xl overflow-hidden">
