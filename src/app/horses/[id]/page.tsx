@@ -32,13 +32,6 @@ export default async function Page({ params }: PageProps) {
             <p className="font-bold text-3xl">{`$${horse.precio}`}</p>
             <Contact email={horse.email} name={horse.nombre} number={horse.numero} contactName={horse.nombre_contacto} />
             <p className="text-pretty text-sm md:text-lg">{horse.descripcion} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim, a vel ratione id, voluptas aspernatur tenetur numquam eaque ab debitis quasi dolorum, error nobis repellendus architecto nam reiciendis repudiandae!</p>
-            <Link
-              target="_blank"
-              href={`https://vlbchjbofhbzpvjmbwjc.supabase.co/storage/v1/object/sign/pedigrees/test.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwZWRpZ3JlZXMvdGVzdC5wZGYiLCJpYXQiOjE3MDYxMjk2OTMsImV4cCI6MzE3MDM0NTkzNjkzfQ.wTjcqo7wD0AyvpuwFQZt_pQhlwMJvNvJuIPCH6MboTc&t=2024-01-24T20%3A54%3A53.818Z`}
-              className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] w-max flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
-            >
-              Pedigree
-            </Link>
             <Atributtes horse={horse} />
           </div>
         </div>
@@ -79,6 +72,13 @@ function Contact({ number, email, name, contactName }: ContactProps) {
         >
           Email  <LuMailPlus />
         </Link>
+        <Link
+          target="_blank"
+          href={`https://vlbchjbofhbzpvjmbwjc.supabase.co/storage/v1/object/public/pedigrees/test.pdf?t=2024-01-24T23%3A20%3A33.261Z`}
+          className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] w-max flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
+        >
+          Pedigree
+        </Link>
       </div>
     </section>
 
@@ -98,6 +98,7 @@ function Atributtes({ horse }: AtributtesProps) {
       <p><strong>Alzada: </strong>{`${horse.alzada}cm`}</p>
       <p><strong>Salto: </strong>{`${horse.salto}cm`}</p>
       <p><strong>Provincia: </strong>{horse.provincia?.nombre}</p>
+      <p><strong>Disciplina: </strong>{horse.disciplina?.nombre}</p>
     </section>
   )
 }
