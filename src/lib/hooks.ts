@@ -65,22 +65,22 @@ export const useUrlSearchParams = () => {
     return false
   }
 
-  const deleteProvince = (province: string) => {
-    const currentProvinces = params.get('provinces')
-    let splitedProvinces = []
-    if (currentProvinces?.includes('&')) {
-      splitedProvinces = currentProvinces.split('&')
-      const filteredProvinces = splitedProvinces.filter((current) => province !== current)
-      return setFilter({ name: 'provinces', value: filteredProvinces.join('&') })
+  const deleteFilterValues = ({ value, name }: { value: string; name: string }) => {
+    const currentValues = params.get(name)
+    let splitedValues = []
+    if (currentValues?.includes('&')) {
+      splitedValues = currentValues.split('&')
+      const filteredValues = splitedValues.filter((current) => value !== current)
+      return setFilter({ name, value: filteredValues.join('&') })
     }
-    if (currentProvinces?.length) {
-      deleteFilter({ name: 'provinces' })
+    if (currentValues?.length) {
+      deleteFilter({ name })
     }
   }
 
   return {
     setFilter,
-    deleteProvince,
+    deleteFilterValues,
     deleteFilter,
     setPage,
     getCurrentPage,

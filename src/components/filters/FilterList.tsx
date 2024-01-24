@@ -2,13 +2,14 @@ import { Sexos } from "@/lib/data";
 import DropDown2 from "../ui/DropDown";
 import DialogRange from "./DialogRange";
 import { Orders } from "@/lib/data";
-import ProvinceFilter from "./ProvinceFilter";
-import { getBreeds, getProvinces } from "@/lib/querys";
+import { getBreeds, getProvinces, getDisciplines } from "@/lib/querys";
 import { Separator } from "../ui/separator";
+import MultipleOption from "./MultipleOption";
 
 export default async function FilterList() {
   const breeds = await getBreeds()
   const provinces = await getProvinces()
+  const disciplines = await getDisciplines()
   return (
     <ul className="flex flex-col w-full  gap-4 justify-center items-start">
       <Separator className="bg-black/20" />
@@ -18,10 +19,14 @@ export default async function FilterList() {
       </ul>
       <Separator className="bg-black/20" />
       <li>
-        <ProvinceFilter provinces={provinces} />
+        <MultipleOption items={provinces} name="provincias" />
       </li>
       <Separator className="bg-black/20" />
-      <li><DropDown2 items={breeds} name="raza" /></li>
+      <li>
+        <MultipleOption items={disciplines} name="disciplinas" />
+      </li>
+      <Separator className="bg-black/20" />
+      <li><MultipleOption items={breeds} name="razas" /></li>
       <Separator className="bg-black/20" />
       <li><DialogRange name="edad" measurement="años" step={1} maxRange={30} /></li>
       <Separator className="bg-black/20" />

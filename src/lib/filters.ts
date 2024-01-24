@@ -1,6 +1,7 @@
 import { type HomeSearchParams } from './types'
 export const setFilters = (searchParams: HomeSearchParams) => {
-  const { maxalzada, minalzada, maxedad, minedad, maxprecio, minprecio, provinces, raza, sexo, query, maxsalto, minsalto } = searchParams
+  const { maxalzada, minalzada, maxedad, minedad, maxprecio, minprecio, provincias, razas, disciplinas, sexo, query, maxsalto, minsalto } =
+    searchParams
   let config = {}
   if (maxalzada && minalzada) {
     config = {
@@ -41,22 +42,32 @@ export const setFilters = (searchParams: HomeSearchParams) => {
       }
     }
   }
-  if (provinces) {
+  if (provincias) {
     config = {
       ...config,
       provinceId: {
-        search: format(provinces)
+        search: format(provincias)
       }
     }
   }
-  if (raza) {
+  if (razas) {
     config = {
       ...config,
-      raza: {
-        nombre: raza
+      razaId: {
+        search: format(razas)
       }
     }
   }
+
+  if (disciplinas) {
+    config = {
+      ...config,
+      disciplinaId: {
+        search: format(disciplinas)
+      }
+    }
+  }
+
   if (sexo) {
     config = {
       ...config,
@@ -85,7 +96,6 @@ function getDate(age: number) {
 }
 
 function format(provincias: string) {
-  console.log()
   if (!provincias.includes('&')) {
     return provincias
   }

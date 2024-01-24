@@ -32,7 +32,7 @@ export const getBreeds = async () => {
   return await prisma.raza.findMany()
 }
 
-export const getDiscipline = async () => {
+export const getDisciplines = async () => {
   return await prisma.disciplina.findMany()
 }
 

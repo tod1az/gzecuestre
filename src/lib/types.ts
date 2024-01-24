@@ -36,8 +36,8 @@ export type Horse = {
 
 export type HomeSearchParams = {
   page?: string
-  provinces?: string
-  raza?: string
+  provincias?: string
+  razas?: string
   minedad?: string
   maxedad?: string
   minprecio?: string
@@ -49,6 +49,7 @@ export type HomeSearchParams = {
   sexo?: string
   orden?: Prisma.SortOrder
   query?: string
+  disciplinas?: string
 }
 
 export type Measurement = 'cm' | 'años' | '$'
