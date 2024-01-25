@@ -29,7 +29,11 @@ export default async function Page({ params }: PageProps) {
         <div className="flex flex-col  justify-between items-center md:pr-16 md:pl-2 w-full">
           <div className="flex-col flex  justify-center gap-6  pt-6">
             <h1 className="text-4xl md:text-5xl font-bold text-negro" >{horse.nombre}</h1>
-            <p className="font-bold text-3xl">{`$${horse.precio}`}</p>
+            {
+              <p className="font-bold text-3xl">
+                {horse.precio_visible ? `$${horse.precio}` : 'Precio a convenir'}
+              </p>
+            }
             <Contact email={horse.email} name={horse.nombre} number={horse.numero} contactName={horse.nombre_contacto} />
             <p className="text-pretty text-sm md:text-lg">{horse.descripcion} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim, a vel ratione id, voluptas aspernatur tenetur numquam eaque ab debitis quasi dolorum, error nobis repellendus architecto nam reiciendis repudiandae!</p>
             <Atributtes horse={horse} />

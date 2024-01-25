@@ -24,7 +24,11 @@ export default function Card({ horse }: CardProps) {
         </div>
         <div className="text-left px-7 mb-3 md:mb-4">
           <h2 className="mt-4 text-sm font-bold">{horse.nombre}</h2>
-          <h3 className="font-bold" >{`$${horse.precio}`}</h3>
+          {
+            horse.precio_visible
+              ? <h3 className="font-bold" >{`$${horse.precio}`}</h3>
+              : <h3 className="font-bold" >Precio a convenir</h3>
+          }
         </div>
         <section className="px-7 flex flex-wrap text-center text-nowrap gap-1  md:gap-2 justify-center">
           <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.raza?.nombre}</CardBadge>
