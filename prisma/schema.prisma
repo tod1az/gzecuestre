@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["fullTextSearch"]
@@ -13,44 +10,44 @@ datasource db {
 }
 
 model Caballo {
-  id                  String      @id @default(uuid())
+  id                  String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   nombre_contacto     String
   nombre              String
-  raza                Raza?       @relation(fields: [razaId], references: [id])
-  razaId              String?
   fecha_de_nacimiento DateTime
   sex                 String
   descripcion         String
   email               String
   numero              String
-  precio              Int
+  precio              Int?
   precio_visible      Boolean?    @default(true)
   videos              String[]
   imagenes            String[]
-  disciplina          Disciplina? @relation(fields: [disciplinaId], references: [id])
-  disciplinaId        String?
-  provincia           Provincia?  @relation(fields: [provinceId], references: [id])
-  provinceId          String?
   alzada              Int
   salto               Int
   destacado           Boolean?    @default(false)
   created_at          DateTime    @default(now())
+  disciplina          Disciplina? @relation(fields: [disciplinaId], references: [id])
+  disciplinaId        String?     @db.Uuid
+  raza                Raza?       @relation(fields: [razaId], references: [id])
+  razaId              String?     @db.Uuid
+  provincia           Provincia?  @relation(fields: [provinciaId], references: [id])
+  provinciaId         String?     @db.Uuid
 }
 
 model Provincia {
-  id     String    @id @default(uuid())
-  nombre String
-  Horse  Caballo[]
+  id      String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nombre  String
+  Caballo Caballo[]
 }
 
 model Raza {
-  id     String    @id @default(uuid())
-  nombre String
-  Horse  Caballo[]
+  id      String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nombre  String
+  Caballo Caballo[]
 }
 
 model Disciplina {
-  id     String    @id @default(uuid())
-  nombre String
-  Horse  Caballo[]
+  id      String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nombre  String
+  Caballo Caballo[]
 }
