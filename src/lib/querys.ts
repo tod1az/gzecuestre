@@ -16,7 +16,7 @@ export const getHorse = async (id: string) => {
 
 export const getHorses = async (searchParams: HomeSearchParams) => {
   const page = (Number(searchParams.page) ?? 1) - 1
-  const order = searchParams.orden ?? 'asc'
+  const order = searchParams.orden ?? 'desc'
   const filters = setFilters(searchParams)
   return await prisma.caballo.findMany({
     orderBy: [
