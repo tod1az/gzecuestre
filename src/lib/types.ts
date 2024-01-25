@@ -19,7 +19,7 @@ export type Horse = {
   imagenes: string[]
   id: string
   numero: string
-  precio: number
+  precio: number | null
   precio_visible: boolean | null
   provincia: {
     nombre: string
