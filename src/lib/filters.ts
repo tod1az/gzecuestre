@@ -1,5 +1,4 @@
 import { type HomeSearchParams } from './types'
-import { Prisma } from '@prisma/client/index'
 export const setFilters = (searchParams: HomeSearchParams) => {
   if (!searchParams) return false
   const { maxalzada, minalzada, maxedad, minedad, maxprecio, minprecio, provincias, razas, disciplinas, sexo, query, maxsalto, minsalto } =
@@ -55,7 +54,7 @@ export const setFilters = (searchParams: HomeSearchParams) => {
   }
   if (provincias) {
     filters.push({
-      provinceId: {
+      provinciaId: {
         search: format(provincias)
       }
     })
