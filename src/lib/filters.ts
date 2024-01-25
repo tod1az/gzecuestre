@@ -34,13 +34,20 @@ export const setFilters = (searchParams: HomeSearchParams) => {
     }
   }
   if (minprecio && maxprecio) {
-    config = {
-      ...config,
-      price: {
-        gte: Number(minprecio),
-        lte: Number(maxprecio)
-      }
-    }
+    maxprecio === '100000'
+      ? (config = {
+          ...config,
+          precio: {
+            gte: Number(minprecio)
+          }
+        })
+      : (config = {
+          ...config,
+          precio: {
+            gte: Number(minprecio),
+            lte: Number(maxprecio)
+          }
+        })
   }
   if (provincias) {
     config = {
