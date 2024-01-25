@@ -1,99 +1,100 @@
 import { type HomeSearchParams } from './types'
+import { Prisma } from '@prisma/client/index'
 export const setFilters = (searchParams: HomeSearchParams) => {
+  if (!searchParams) return false
   const { maxalzada, minalzada, maxedad, minedad, maxprecio, minprecio, provincias, razas, disciplinas, sexo, query, maxsalto, minsalto } =
     searchParams
-  let config = {}
+  const filters = []
   if (maxalzada && minalzada) {
-    config = {
-      ...config,
+    filters.push({
       alzada: {
         gte: Number(minalzada),
         lte: Number(maxalzada)
       }
-    }
+    })
   }
   if (minsalto && maxsalto) {
-    config = {
-      ...config,
+    filters.push({
       salto: {
         gte: Number(minsalto),
         lte: Number(maxsalto)
       }
-    }
+    })
   }
   if (minedad && maxedad) {
-    console.log(minedad, maxedad)
-    console.log(getDate(Number(minedad)))
-    console.log(getDate(Number(maxedad)))
-    config = {
-      ...config,
+    filters.push({
       fecha_de_nacimiento: {
         gte: getDate(Number(maxedad)),
         lte: getDate(Number(minedad))
       }
-    }
+    })
   }
   if (minprecio && maxprecio) {
-    maxprecio === '100000'
-      ? (config = {
-          ...config,
-          precio: {
-            gte: Number(minprecio)
+    const priceFilter =
+      maxprecio === '100000'
+        ? {
+            precio: {
+              gte: Number(minprecio)
+            }
           }
-        })
-      : (config = {
-          ...config,
-          precio: {
-            gte: Number(minprecio),
-            lte: Number(maxprecio)
+        : {
+            precio: {
+              gte: Number(minprecio),
+              lte: Number(maxprecio)
+            }
           }
-        })
+
+    filters.push({
+      OR: [
+        priceFilter,
+        {
+          precio_visible: false
+        }
+      ]
+    })
   }
   if (provincias) {
-    config = {
-      ...config,
+    filters.push({
       provinceId: {
         search: format(provincias)
       }
-    }
+    })
   }
   if (razas) {
-    config = {
-      ...config,
+    filters.push({
       razaId: {
         search: format(razas)
       }
-    }
+    })
   }
 
   if (disciplinas) {
-    config = {
-      ...config,
+    filters.push({
       disciplinaId: {
         search: format(disciplinas)
       }
-    }
+    })
   }
 
   if (sexo) {
-    config = {
-      ...config,
+    filters.push({
       sex: {
         contains: sexo,
         mode: 'insensitive'
       }
-    }
+    })
   }
   if (query) {
-    config = {
-      ...config,
+    filters.push({
       nombre: {
         contains: query,
         mode: 'insensitive'
       }
-    }
+    })
   }
-  return config
+  return {
+    AND: filters
+  }
 }
 
 function getDate(age: number) {

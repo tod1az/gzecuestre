@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client'
 import { setFilters } from './filters'
 import { horseQueryModel } from './querymodels'
 import { HomeSearchParams } from './types'
@@ -23,7 +24,7 @@ export const getHorses = async (searchParams: HomeSearchParams) => {
         precio: order
       }
     ],
-    where: filters,
+    where: filters ? (filters as Prisma.CaballoWhereInput) : undefined,
     select: horseQueryModel
   })
 }
