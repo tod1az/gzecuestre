@@ -7,8 +7,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getAdLocation = (horses: Horse[]) => {
-  const adLocation = Math.floor(horses.length / 2)
-  return adLocation % 2 === 0 ? adLocation : adLocation + 1
+  if (horses.length <= 8) return [4, 3]
+  return [8, 6]
 }
 
 export const getAge = (birthdate: Date) => {

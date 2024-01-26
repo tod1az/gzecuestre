@@ -19,10 +19,18 @@ export default async function CardContainer({ searchParams }: CardContainerProps
         className="grid grid-cols-2   rounded-lg xl:grid-cols-4 md:grid-cols-3 justify-center gap-[1rem] md:gap-[1rem]">
         {
           horses.map((horse, index) => {
-            if (index === adLocation) {
+            if (index === adLocation[0]) {
               return (
                 <Fragment key={'ad'}>
-                  <Ad />
+                  <Ad location={adLocation[0]} />
+                  <Card horse={horse} />
+                </Fragment>
+              )
+            }
+            if (index === adLocation[1]) {
+              return (
+                <Fragment key={'ad'}>
+                  <Ad location={adLocation[1]} />
                   <Card horse={horse} />
                 </Fragment>
               )
