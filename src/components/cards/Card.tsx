@@ -15,7 +15,7 @@ export default function Card({ horse }: CardProps) {
         <div className="overflow-hidden">
           <Image
             className="md:group-hover:scale-110 object-cover transition-transform w-full h-[7rem] md:h-[9rem]"
-            src={'/caballo.jpg'}
+            src={horse.imagenes[0]}
             alt="caballo"
             width={400}
             height={400}
