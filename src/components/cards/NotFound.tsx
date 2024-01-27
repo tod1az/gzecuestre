@@ -7,6 +7,7 @@ export default function NotFound() {
       alt="Sin Resultados"
       width={500}
       height={500}
+      quality={95}
     />
   )
 }

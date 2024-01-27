@@ -44,6 +44,9 @@ export default async function CardContainer({ searchParams }: CardContainerProps
             )
           })
         }
+        {
+          horses.length <= 4 && <Ad location={0} />
+        }
       </section>
       <div className="pt-[2rem] pb-2 ">
         {!!paginationActive && <Pagination />}
