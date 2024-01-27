@@ -39,7 +39,7 @@ export default function Hero() {
              `}>
               <Link
                 className="flex gap-2 items-center"
-                href={'/about'}>
+                href={'/#about'}>
                 Nosotros
                 <AiOutlineExport />
               </Link>
