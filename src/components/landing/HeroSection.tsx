@@ -60,7 +60,7 @@ export default function Hero() {
              active:scale-105 active:translate-y-1 transition-all
              `}>
         <Link href={'/home'}>
-          Encuentra tu próximo caballo
+          Encontrá tu próximo caballo
         </Link>
       </Button>
     </section>
