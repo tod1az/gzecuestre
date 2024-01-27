@@ -28,7 +28,7 @@ export default function About() {
           Nuestro objetivo es brindar un
           servicio integral y personalizado, brindando asesoramiento experto, evaluación de caballos,
           negociaciones transparentes y una experiencia sin complicaciones. Con una amplia red de
-          contactos en el mundo ecuestre y un profundo conocimiento del mercado equino
+          contactos en el mundo ecuestre y un profundo conocimiento del mercado equino.
         </p>
         <div className="flex  justify-center gap-8 md:gap-4 xl:gap-[10rem] pt-4">
           <Link
