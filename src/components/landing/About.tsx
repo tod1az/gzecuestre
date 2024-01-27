@@ -11,9 +11,9 @@ export default function About() {
     <section
       ref={ref}
       id="about"
-      className="flex flex-col  items-center md:scroll-m-[4rem] scroll-m-[6rem]  text-black h-screen">
+      className="flex flex-col  items-center  md:scroll-m-[4rem] scroll-m-[6rem] md:pb-[10rem] text-black h-screen md:h-max">
       <LandingHeader>Nosotros</LandingHeader>
-      <article className="flex flex-col gap-4  md:w-[40rem] xl:w-[60rem] text-xl px-4 pt-8 md:pt-16 text-pretty">
+      <article className="flex flex-col gap-4  md:w-[40rem] xl:w-[60rem] text-lg md:text-xl px-4 pt-8 md:pt-16 text-pretty">
         <p>
           “GZ Ecuestre” es una empresa dedicada a facilitar la compra y venta de caballos,
           actuando
@@ -30,7 +30,7 @@ export default function About() {
           negociaciones transparentes y una experiencia sin complicaciones. Con una amplia red de
           contactos en el mundo ecuestre y un profundo conocimiento del mercado equino.
         </p>
-        <div className="flex  justify-center gap-8 md:gap-4 xl:gap-[10rem] pt-4">
+        <div className="flex  justify-center gap-12  items-center  md:gap-[12rem] xl:gap-[20rem] pt-4">
           <Link
             className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
             target="_blank"

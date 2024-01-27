@@ -11,7 +11,7 @@ export default function HomeNavigation() {
       <button
         aria-label="Back Button"
         onClick={() => back()}
-        className="ml-3 md:ml-4 text-2xl md:text-xl xl:text-2xl flex gap-0 md:gap-2 text-gray-600 transition-colors items-center hover:underline hover:text-negro" >
+        className="ml-3 md:ml-4 text-2xl md:text-xl  flex gap-0 md:gap-2 text-gray-600 transition-colors items-center hover:underline hover:text-negro" >
         <IoMdArrowBack />
         <p className="hidden md:block">
           Catálogo
@@ -21,7 +21,7 @@ export default function HomeNavigation() {
   }
   return (
     <button
-      aria-label="Back Button"
+      aria-label="Inicio Button"
       onClick={() => push('/')}
       className="group ml-3  items-start md:ml-4 text-3xl xl:text-3xl flex gap-0 md:gap-2 transition-colors text-gray-600 hover:text-negro" >
       <FaHome />
