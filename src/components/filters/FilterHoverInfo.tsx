@@ -16,7 +16,7 @@ export default function FilterHoverInfo({ name }: FilterHoverCardProps) {
       <Tooltip>
         <TooltipTrigger><IoMdInformationCircleOutline /></TooltipTrigger>
         <TooltipContent className="bg-blanco text-gray-600">
-          <p className="flex gap-1">Puedes seleccionar multiples <p className="capitalize">{name}</p></p>
+          <p className="flex gap-1">Puedes seleccionar múltiples <p className="capitalize">{name}</p></p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
