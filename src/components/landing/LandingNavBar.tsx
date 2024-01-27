@@ -18,7 +18,7 @@ export default function LandingNavBar() {
     <nav className="fixed top-0 z-[999] shadow-xl w-screen">
       <div
         className={`pl-3 bg-blanco flex justify-between items-center
-         fixed  h-[4.5rem] text-2xl shadow-xl  w-full pr-3`}>
+         fixed  h-[6.5rem] md:h-[4.5rem] text-2xl shadow-xl  w-full pr-3`}>
         <Link href={'/'}>
           <Image
             src={'/Logo.png'}
@@ -27,7 +27,7 @@ export default function LandingNavBar() {
             alt="Logo Eg Ecuestre Imagen"
           />
         </Link>
-        <section className="flex items-center gap-2 text-sm md:text-lg">
+        <section className="flex items-center justify-center pl-4 flex-wrap gap-2 text-sm md:text-lg">
           {
             Links.map(({ name, hash }) => (
               <Link

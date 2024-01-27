@@ -16,7 +16,7 @@ export default function ContactSection() {
     <section
       ref={ref}
       id="contact"
-      className="scroll-m-[4rem] flex flex-col items-center gap-[6rem]  xl:gap-[5rem] h-[91.5vh] md:h-[93vh] xl:h-[92.05vh]">
+      className="md:scroll-m-[4rem] scroll-m-[6rem] flex flex-col items-center gap-[6rem]  xl:gap-[5rem] h-[91.5vh] md:h-[93vh] xl:h-[92.05vh]">
       <LandingHeader>
         Contáctanos
       </LandingHeader>

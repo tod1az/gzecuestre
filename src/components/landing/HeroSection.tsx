@@ -13,7 +13,7 @@ export default function Hero() {
       ref={ref}
       id="intro"
       className={`flex flex-col justify-center 
-       gap-5 md:gap-[1rem] xl:gap-[10rem] items-center h-[84.5vh] md:scroll-m-[1rem] md:h-[82vh] xl:h-[92.05vh] mb-32 `}>
+       gap-5 md:gap-[1rem] xl:gap-[10rem] items-center h-[88.5vh] md:scroll-m-[6rem] md:h-[82vh] xl:h-[92.05vh] mb-32 `}>
       <section className="flex flex-col xl:flex-row w-[95%] justify-center items-center text-left xl:items-center gap-6 xl:gap-[7rem]">
         <article className="flex flex-col   gap-2  xl:gap-5">
           <p className="text-xl md:text-2xl LandingSubTitle" >Bienvenidos a</p>

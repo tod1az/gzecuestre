@@ -41,6 +41,10 @@ export const Links = [
     name: 'auspiciantes'
   },
   {
+    hash: '#about',
+    name: 'nosotros'
+  },
+  {
     hash: '#contact',
     name: 'contacto'
   }
