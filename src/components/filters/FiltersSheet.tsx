@@ -4,9 +4,9 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { FcMenu } from "react-icons/fc"
-import { usePathname, useRouter } from "next/navigation"
-import { IoArrowBack } from "react-icons/io5";
+import { usePathname } from "next/navigation";
+
+import { MdMenuOpen } from "react-icons/md";
 
 type Props = {
   children: React.ReactNode
@@ -14,29 +14,24 @@ type Props = {
 
 export default function FiltersSheet({ children }: Props) {
   const path = usePathname()
-  const { back } = useRouter()
-
   if (path.startsWith('/horses')) {
-    return (
-      <button
-        aria-label="Back Button"
-        onClick={() => back()}
-        className="ml-3 md:ml-4 text-lg flex gap-0 md:gap-2 text-gray-600 items-center hover:underline hover:text-negro" >
-        <IoArrowBack /> Volver
-      </button >
-    )
+    return <div />
   }
+
   return (
     <Sheet>
       <SheetTrigger asChild>
         <button
-          aria-label="Back Button"
-          className="ml-4 text-4xl"
+          aria-label="Filtros Button"
+          className="group md:mr-7  mr-4 text-4xl gap-2 hover:text-negro text-gray-600 flex items-center transition-colors"
         >
-          <FcMenu />
+          <p className="hidden text-xl md:block xl:text-xl pt-2 text-gray-600  group-hover:text-negro transition-colors">
+            Filtros
+          </p>
+          <MdMenuOpen />
         </button>
       </SheetTrigger>
-      <SheetContent className="bg-orange-200  w-[312px]" side={'left'}>
+      <SheetContent className="bg-orange-200  w-[312px]" side={'right'}>
         {children}
       </SheetContent>
     </Sheet>
