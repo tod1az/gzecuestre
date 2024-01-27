@@ -4,6 +4,7 @@ import FeaturedSection from "@/components/landing/FeaturedSection"
 import Sponsors from "@/components/landing/SponsorsSection"
 import ContactSection from "@/components/landing/ContactSection"
 import { ActiveSectionContextProvider } from "@/context/ActiveSectionContext"
+import About from "@/components/landing/About"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <FeaturedSection />
         <Sponsors />
+        <About />
         <ContactSection />
       </ActiveSectionContextProvider>
     </main>
