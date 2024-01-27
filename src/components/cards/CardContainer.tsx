@@ -5,6 +5,7 @@ import Ad from "../ad/Ad"
 import Pagination from "../ui/Pagination"
 import { getAdLocation } from "@/lib/utils"
 import { getHorses } from "@/lib/querys"
+import NotFound from "./NotFound"
 
 type CardContainerProps = {
   searchParams: HomeSearchParams
@@ -13,6 +14,7 @@ export default async function CardContainer({ searchParams }: CardContainerProps
   const horses = await getHorses(searchParams)
   const paginationActive = horses.length > 20
   const adLocation = getAdLocation(horses)
+  if (horses.length === 0) return <NotFound />
   return (
     <section className="flex flex-col items-center pb-[10rem] w-full  pt-10 p-6 bg-gradient-to-b from-orange-100 via-blanco to-orange-200 rounded-lg ">
       <section
