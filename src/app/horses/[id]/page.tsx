@@ -1,6 +1,7 @@
 import { getHorse } from "@/lib/querys"
 import { FaWhatsapp } from "react-icons/fa";
 import { LuMailPlus } from "react-icons/lu"
+import { CgListTree } from "react-icons/cg";
 import Link from "next/link"
 import DetailCarousel from "@/components/detail/DetailCarousel"
 import { featuredHorses } from "@/lib/data"
@@ -57,31 +58,34 @@ type ContactProps = {
 function Contact({ number, email, name, contactName }: ContactProps) {
   return (
     <section className="flex flex-col gap-2 items-center pt-2">
-      <p className="w-full text-left text-lg"><strong>Nombre de contacto: </strong>{contactName}</p>
-      <div className="flex items-center justify-between md:justify-start w-full md:gap-[10rem]">
-        <Link
-          className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
-          target="_blank"
-          href={`https://wa.me/${number}?text=Hola ${contactName} ! Quisiera saber más sobre ${name} publicado en Gz Ecuestre`}
-        >
-          WhatsApp
-          <div className="text-xl">
-            <FaWhatsapp />
-          </div>
-        </Link>
-        <Link
-          target="_blank"
-          href={`mailto:${email}?subject=Publicación Gz Ecuestre`}
-          className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
-        >
-          Email  <LuMailPlus />
-        </Link>
+      <p className="w-full text-left text-lg mb-5"><strong>Nombre de contacto: </strong>{contactName}</p>
+      <div className="flex flex-col justify-start w-full gap-4">
+        <div className="flex items-center justify-between md:justify-start w-full md:gap-[10rem]">
+          <Link
+            className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
+            target="_blank"
+            href={`https://wa.me/${number}?text=Hola ${contactName} ! Quisiera saber más sobre ${name} publicado en Gz Ecuestre`}
+          >
+            WhatsApp
+            <div className="text-xl">
+              <FaWhatsapp />
+            </div>
+          </Link>
+
+          <Link
+            target="_blank"
+            href={`mailto:${email}?subject=Publicación Gz Ecuestre`}
+            className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
+          >
+            Email  <LuMailPlus />
+          </Link>
+        </div>
         <Link
           target="_blank"
           href={`https://vlbchjbofhbzpvjmbwjc.supabase.co/storage/v1/object/public/pedigrees/test.pdf?t=2024-01-24T23%3A20%3A33.261Z`}
-          className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] w-max flex gap-2 items-center text-white hover:bg-negro bg-orange-500 rounded-lg"
+          className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] w-max flex gap-2 items-center text-black hover:bg-negro hover:text-blanco bg-orange-200 rounded-lg"
         >
-          Pedigree
+          Pedigree <CgListTree />
         </Link>
       </div>
     </section>
