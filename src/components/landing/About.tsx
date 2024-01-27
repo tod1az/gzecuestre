@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { LuMailPlus } from "react-icons/lu";
 
 export default function About() {
-  const { ref } = useSectionInView('contacto')
+  const { ref } = useSectionInView('nosotros')
   return (
     <section
       ref={ref}
