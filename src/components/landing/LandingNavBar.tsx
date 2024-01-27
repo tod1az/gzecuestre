@@ -21,9 +21,10 @@ export default function LandingNavBar() {
          fixed  h-[6.5rem] md:h-[4.5rem] text-2xl shadow-xl  w-full pr-3`}>
         <Link href={'/'}>
           <Image
+            className="w-[90%] md:w-[50%]"
             src={'/Logo.png'}
-            width={64}
-            height={64}
+            width={100}
+            height={100}
             alt="Logo Eg Ecuestre Imagen"
           />
         </Link>
