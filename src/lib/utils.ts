@@ -7,7 +7,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getAdLocation = (horses: Horse[]) => {
-  if (horses.length <= 4) return [horses.length - 1, horses.length - 1]
   if (horses.length <= 8) return [4, 3]
   return [8, 6]
 }

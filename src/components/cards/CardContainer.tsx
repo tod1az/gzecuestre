@@ -19,7 +19,7 @@ export default async function CardContainer({ searchParams }: CardContainerProps
   return (
     <section className="flex flex-col items-center pb-[10rem] w-full  pt-10 p-6 bg-gradient-to-b from-orange-100 via-blanco to-orange-200 rounded-lg ">
       <section
-        className="grid grid-cols-2   rounded-lg xl:grid-cols-4 md:grid-cols-3 justify-center gap-[1rem] md:gap-[1rem]">
+        className="grid grid-cols-2 items-center rounded-lg xl:grid-cols-4 md:grid-cols-3 justify-center gap-[1rem] md:gap-[1rem]">
         {
           horses.map((horse, index) => {
             if (index === adLocation[0]) {
