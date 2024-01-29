@@ -14,8 +14,10 @@ export const useUrlSearchParams = () => {
     if (name === 'orden') {
       const newValue = value.split(' ')[0] === 'mayor' ? 'desc' : 'asc'
       params.set(name, newValue)
+      params.set('page', '1')
     } else {
       params.set(name, value)
+      params.set('page', '1')
     }
     replace(`${path}?${params.toString()}`)
   }
@@ -24,6 +26,7 @@ export const useUrlSearchParams = () => {
     if (name !== 'query') {
       params.delete(`min${name}`)
       params.delete(`max${name}`)
+      params.set('page', '1')
     }
     params.delete(name)
     replace(`${path}?${params.toString()}`)

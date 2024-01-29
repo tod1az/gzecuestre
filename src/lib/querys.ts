@@ -15,7 +15,8 @@ export const getHorse = async (id: string) => {
 }
 
 export const getHorses = async (searchParams: HomeSearchParams) => {
-  const page = (Number(searchParams.page) ?? 1) - 1
+  const perPage = 20
+  const page = Number(searchParams.page ?? 1)
   const order = searchParams.orden ?? 'desc'
   const filters = setFilters(searchParams)
   return await prisma.caballo.findMany({
@@ -25,7 +26,9 @@ export const getHorses = async (searchParams: HomeSearchParams) => {
       }
     ],
     where: filters ? (filters as Prisma.CaballoWhereInput) : undefined,
-    select: horseQueryModel
+    select: horseQueryModel,
+    skip: (page - 1) * perPage,
+    take: perPage
   })
 }
 
@@ -93,5 +96,12 @@ export const getSponsors = async () => {
         nombre: 'asc'
       }
     ]
+  })
+}
+
+export const getTotalHorses = async (searchParams: HomeSearchParams) => {
+  const filters = setFilters(searchParams)
+  return prisma.caballo.count({
+    where: filters as Prisma.CaballoWhereInput
   })
 }
