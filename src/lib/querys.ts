@@ -4,7 +4,6 @@ import { horseQueryModel } from './querymodels'
 import { HomeSearchParams } from './types'
 import prisma from '@/db/db'
 
-const perPage = 20
 export const getHorse = async (id: string) => {
   return await prisma.caballo.findFirst({
     where: {
