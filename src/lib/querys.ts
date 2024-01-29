@@ -22,10 +22,13 @@ export const getHorses = async (searchParams: HomeSearchParams) => {
   return await prisma.caballo.findMany({
     orderBy: [
       {
+        precio_visible: 'asc'
+      },
+      {
         precio: order
       }
     ],
-    where: filters ? (filters as Prisma.CaballoWhereInput) : undefined,
+    where: filters as Prisma.CaballoWhereInput,
     select: horseQueryModel,
     skip: (page - 1) * perPage,
     take: perPage
