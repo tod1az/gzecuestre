@@ -1,8 +1,19 @@
 'use client'
 
 import { useEffect, useState } from "react";
+import AdCarousel from "./AdCarousel";
 
-export default function Ad({ location }: { location: number }) {
+type AdProps = {
+  location: number
+  sponsors: {
+    id: string;
+    nombre: string;
+    logo: string;
+    url: string;
+  }[]
+}
+
+export default function Ad({ location, sponsors }: AdProps) {
 
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
   const medium = location === 3 || location === 6
@@ -23,8 +34,8 @@ export default function Ad({ location }: { location: number }) {
   if (medium && !mediemWidth || xl && mediemWidth) return null
 
   return (
-    <div className="border xl:m-2 h-[20rem] col-span-full">
-      Ad
+    <div className="xl:m-2 h-[23rem] col-span-full">
+      <AdCarousel sponsors={sponsors} />
     </div>
   )
 }

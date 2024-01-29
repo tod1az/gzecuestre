@@ -13,9 +13,13 @@ export default async function page({ searchParams }: PageProps) {
   return (
     <main className="scroll-m-[10000rem] w-full h-full bg-orange-100">
       <section className="mt-[4.5rem]  flex flex-col items-center justify-center gap-5 ">
-        <Suspense fallback={<BannerSkeleton />}>
-          <BannerCarouselServer />
-        </Suspense>
+        <div>
+          <h2
+            className="text-xl mt-6 md:text-3xl w-full text-left text-negro">Novedades</h2>
+          <Suspense fallback={<BannerSkeleton />}>
+            <BannerCarouselServer />
+          </Suspense>
+        </div>
         <h1 className="md:text-5xl text-3xl text-negro pl-2 font-bold ">Catálogo</h1>
         <Suspense key={Object.values(searchParams).join('')} fallback={<CardsSkeleton />}>
           <CardContainer searchParams={searchParams} />

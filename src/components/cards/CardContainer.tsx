@@ -6,6 +6,7 @@ import Pagination from "../ui/Pagination"
 import { getAdLocation } from "@/lib/utils"
 import { getHorses } from "@/lib/querys"
 import NotFound from "./NotFound"
+import AdSv from "../ad/AdSv"
 
 type CardContainerProps = {
   searchParams: HomeSearchParams
@@ -24,7 +25,7 @@ export default async function CardContainer({ searchParams }: CardContainerProps
             if (index === adLocation[0]) {
               return (
                 <Fragment key={'ad'}>
-                  <Ad location={adLocation[0]} />
+                  <AdSv location={adLocation[0]} />
                   <Card horse={horse} />
                 </Fragment>
               )
@@ -32,7 +33,7 @@ export default async function CardContainer({ searchParams }: CardContainerProps
             if (index === adLocation[1]) {
               return (
                 <Fragment key={'ad'}>
-                  <Ad location={adLocation[1]} />
+                  <AdSv location={adLocation[1]} />
                   <Card horse={horse} />
                 </Fragment>
               )
@@ -45,7 +46,7 @@ export default async function CardContainer({ searchParams }: CardContainerProps
           })
         }
         {
-          horses.length <= 4 && <Ad location={0} />
+          horses.length <= 4 && <AdSv location={0} />
         }
       </section>
       <div className="pt-[2rem] pb-2 ">

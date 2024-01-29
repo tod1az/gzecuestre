@@ -3,8 +3,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
 import {
   Card,
@@ -16,17 +14,16 @@ import Autoplay from "embla-carousel-autoplay"
 import { useRef } from "react"
 import Link from "next/link"
 
-type Item = {
-  id: string
-  imagenes: string[]
+type AdCarouselProps = {
+  sponsors: {
+    id: string;
+    nombre: string;
+    logo: string;
+    url: string;
+  }[]
 }
 
-type LandginCarouselProprs = {
-  items: Item[]
-}
-
-export default function BannerCarousel({ items }: LandginCarouselProprs) {
-
+export default function AdCarousel({ sponsors }: AdCarouselProps) {
   const plugin = useRef(
     Autoplay({
       delay: 2500, stopOnInteraction: true
@@ -48,18 +45,20 @@ export default function BannerCarousel({ items }: LandginCarouselProprs) {
         className="w-[22rem] md:w-[45rem] xl:w-[60rem] h-auto  mb-[6rem]">
         <CarouselContent>
           {
-            items.map((item) => (
+            sponsors.map((item) => (
               <CarouselItem key={item.id}>
                 <Card className="bg-black border-none flex justify-center overflow-hidden ">
-                  <Link href={`/horses/${item.id}`}>
+                  <Link
+                    target="_blank"
+                    href={item.url}>
                     <CardContent className="flex object-cover w-full  h-[20rem] items-center justify-center p-0">
                       <Image
                         className="px-6 w-auto h-[20rem] object-cover"
-                        src={item.imagenes[0]}
+                        src={item.logo}
                         width={500}
                         height={100}
                         quality={95}
-                        alt="caballo destacado"
+                        alt={item.nombre}
                       />
                     </CardContent>
                   </Link>
@@ -68,8 +67,6 @@ export default function BannerCarousel({ items }: LandginCarouselProprs) {
             ))
           }
         </CarouselContent>
-        <CarouselNext className="hover:bg-orange-200 bg-blanco shadow-lg hidden xl:flex" />
-        <CarouselPrevious className="hover:bg-orange-200 bg-blanco shadow-lg hidden xl:flex" />
       </Carousel>
     </section>
   )
