@@ -1,7 +1,5 @@
 'use client'
-import LandingCarousel from "./LandingCarousel";
 import LandingHeader from "./LangingHeader";
-import { sponsors } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 
 type SponsorsProps = {
