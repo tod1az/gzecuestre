@@ -29,6 +29,33 @@ export const getHorses = async (searchParams: HomeSearchParams) => {
   })
 }
 
+export const getFeaturedHorses = async () => {
+  return await prisma.caballo.findMany({
+    where: {
+      destacado: true
+    },
+    select: {
+      id: true,
+      imagenes: true
+    }
+  })
+}
+
+export const getLastHorses = async () => {
+  return await prisma.caballo.findMany({
+    orderBy: [
+      {
+        created_at: 'desc'
+      }
+    ],
+    select: {
+      id: true,
+      imagenes: true
+    },
+    take: 5
+  })
+}
+
 export const getBreeds = async () => {
   return await prisma.raza.findMany({
     orderBy: [
@@ -51,6 +78,16 @@ export const getDisciplines = async () => {
 
 export const getProvinces = async () => {
   return prisma.provincia.findMany({
+    orderBy: [
+      {
+        nombre: 'asc'
+      }
+    ]
+  })
+}
+
+export const getSponsors = async () => {
+  return prisma.auspiciante.findMany({
     orderBy: [
       {
         nombre: 'asc'

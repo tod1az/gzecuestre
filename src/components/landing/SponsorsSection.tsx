@@ -4,7 +4,11 @@ import LandingHeader from "./LangingHeader";
 import { sponsors } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 
-export default function Sponsors() {
+type SponsorsProps = {
+  children: React.ReactNode
+}
+
+export default function Sponsors({ children }: SponsorsProps) {
   const { ref } = useSectionInView('auspiciantes')
   return (
     <section
@@ -14,7 +18,7 @@ export default function Sponsors() {
       <LandingHeader>
         Auspiciantes
       </LandingHeader >
-      <LandingCarousel items={sponsors} />
+      {children}
     </section>
   )
 }

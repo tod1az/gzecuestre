@@ -1,10 +1,12 @@
 'use client'
-import LandingCarousel from './LandingCarousel'
-import LandingHeader from './LangingHeader'
-import { featuredHorses } from '../../lib/data'
 import { useSectionInView } from '@/lib/hooks'
+import LandingHeader from './LangingHeader'
 
-export default function FeaturedSection() {
+type FeaturedSectionProps = {
+  children: React.ReactNode
+}
+
+export default function FeaturedSection({ children }: FeaturedSectionProps) {
   const { ref } = useSectionInView('destacado')
   return (
     <section
@@ -14,7 +16,7 @@ export default function FeaturedSection() {
       <LandingHeader>
         Ingresados Recientemente
       </LandingHeader>
-      <LandingCarousel items={featuredHorses} />
+      {children}
     </section>
   )
 }
