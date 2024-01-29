@@ -1,13 +1,14 @@
 import { getHorse } from "@/lib/querys"
 import { FaWhatsapp } from "react-icons/fa";
 import { LuMailPlus } from "react-icons/lu"
-import { CgListTree } from "react-icons/cg";
 import Link from "next/link"
 import DetailCarousel from "@/components/detail/DetailCarousel"
 import VideoCarousel from "@/components/detail/VideoCarousel";
 import { getAge } from "@/lib/utils";
 import { Horse } from "@/lib/types";
 import DetailSkeleton from "../skeletons/DetailSkeleton";
+import { Separator } from "@/components/ui/separator";
+import { GiFamilyTree } from "react-icons/gi";
 
 type PageProps = {
   params: {
@@ -26,6 +27,7 @@ export default async function Detail({ params }: PageProps) {
       </div>
       <div className="flex flex-col  justify-between items-start md:pr-16 md:pl-2 w-full">
         <div className="flex-col flex  justify-center gap-6  pt-6">
+          <Separator />
           <h1 className="text-4xl md:text-5xl font-bold text-negro" >{horse?.nombre}</h1>
           {
             <p className="font-bold text-3xl">
@@ -34,7 +36,15 @@ export default async function Detail({ params }: PageProps) {
           }
           <Contact email={horse?.email} name={horse?.nombre} number={horse?.numero} contactName={horse?.nombre_contacto} />
           <p className="text-pretty text-sm md:text-lg">{horse?.descripcion}</p>
+          <Link
+            target="_blank"
+            href={`https://vlbchjbofhbzpvjmbwjc.supabase.co/storage/v1/object/public/pedigrees/test.pdf?t=2024-01-24T23%3A20%3A33.261Z`}
+            className="font-bold hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] w-max flex gap-2 items-center text-black hover:bg-negro hover:text-blanco bg-orange-200 rounded-lg"
+          >
+            Pedigree <GiFamilyTree />
+          </Link>
           <Atributtes horse={horse} />
+          <Separator />
         </div>
       </div>
       <div className="w-full mt-12">
@@ -77,13 +87,6 @@ function Contact({ number, email, name, contactName }: ContactProps) {
             Email  <LuMailPlus />
           </Link>
         </div>
-        <Link
-          target="_blank"
-          href={`https://vlbchjbofhbzpvjmbwjc.supabase.co/storage/v1/object/public/pedigrees/test.pdf?t=2024-01-24T23%3A20%3A33.261Z`}
-          className="hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] w-max flex gap-2 items-center text-black hover:bg-negro hover:text-blanco bg-orange-200 rounded-lg"
-        >
-          Pedigree <CgListTree />
-        </Link>
       </div>
     </section>
 
