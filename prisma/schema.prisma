@@ -51,3 +51,10 @@ model Disciplina {
   nombre  String
   Caballo Caballo[]
 }
+
+model Auspiciante {
+  id     String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nombre String
+  logo   String
+  url    String
+}
