@@ -40,8 +40,7 @@ export default function BannerCarousel({ items }: LandginCarouselProprs) {
         plugins={[
           plugin.current
         ]}
-        onMouseEnter={plugin.current.stop}
-        onMouseLeave={plugin.current.reset}
+
         opts={{
           align: 'center',
           loop: true,
