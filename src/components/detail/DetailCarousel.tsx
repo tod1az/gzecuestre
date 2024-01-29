@@ -12,11 +12,13 @@ import {
   CardContent,
 } from "@/components/ui/card"
 
+
+
 type DetailCarouselProps = {
-  items: ({ imageRoute: string })[]
+  images: string[]
 }
 
-export default function DetailCarousel({ items }: DetailCarouselProps) {
+export default function DetailCarousel({ images }: DetailCarouselProps) {
   return (
     <Carousel
       opts={{
@@ -25,13 +27,13 @@ export default function DetailCarousel({ items }: DetailCarouselProps) {
     >
       <CarouselContent>
         {
-          items.map((item) => (
-            <CarouselItem key={item.imageRoute} className="rounded-lg overflow-hidden">
+          images.map((image) => (
+            <CarouselItem key={image} className="rounded-lg overflow-hidden">
               <Card className="bg-black border-none flex justify-center ">
                 <CardContent className="flex object-cover w-full h-[15rem] md:h-[25rem] items-center justify-center p-0">
                   <Image
                     className="w-auto h-full object-cover"
-                    src={item.imageRoute}
+                    src={image}
                     width={500}
                     height={100}
                     quality={95}

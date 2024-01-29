@@ -14,6 +14,7 @@ import {
 import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 import { useRef } from "react"
+import Link from "next/link"
 
 type Item = {
   id: string
@@ -26,7 +27,6 @@ type LandginCarouselProprs = {
 
 export default function BannerCarousel({ items }: LandginCarouselProprs) {
 
-  console.log(items)
   const plugin = useRef(
     Autoplay({
       delay: 2500, stopOnInteraction: true
@@ -53,16 +53,18 @@ export default function BannerCarousel({ items }: LandginCarouselProprs) {
             items.map((item) => (
               <CarouselItem key={item.id}>
                 <Card className="bg-black border-none flex justify-center overflow-hidden ">
-                  <CardContent className="flex object-cover w-full  h-[20rem] items-center justify-center p-0">
-                    <Image
-                      className="px-6 w-auto h-[20rem] object-cover"
-                      src={item.imagenes[0]}
-                      width={500}
-                      height={100}
-                      quality={95}
-                      alt="caballo destacado"
-                    />
-                  </CardContent>
+                  <Link href={`/horses/${item.id}`}>
+                    <CardContent className="flex object-cover w-full  h-[20rem] items-center justify-center p-0">
+                      <Image
+                        className="px-6 w-auto h-[20rem] object-cover"
+                        src={item.imagenes[0]}
+                        width={500}
+                        height={100}
+                        quality={95}
+                        alt="caballo destacado"
+                      />
+                    </CardContent>
+                  </Link>
                 </Card>
               </CarouselItem>
             ))
