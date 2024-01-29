@@ -53,6 +53,14 @@ export default function Hero() {
           height={288}
           alt="caballos"
         />
+        {/* <Image
+          className="rounded-lg w-full md:w-auto  md:h-[480px]"
+          src={'/prueba1.jpg'}
+          width={480}
+          height={288}
+          alt="caballos"
+          quality={95}
+        /> */}
       </section>
       <Button
         className={`bg-orange-600 text-xl md:text-3xl md:py-8 md:px-8  peer-hover:bg-white/50
