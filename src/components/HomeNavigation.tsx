@@ -14,7 +14,7 @@ export default function HomeNavigation() {
         className="ml-3 md:ml-4 text-2xl md:text-xl  flex gap-0 md:gap-2 text-gray-600 transition-colors items-center  hover:text-negro" >
         <IoMdArrowBack />
         <p className="hidden md:block">
-          Catálogo
+          Volver
         </p>
       </button >
     )
