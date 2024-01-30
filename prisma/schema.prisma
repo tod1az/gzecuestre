@@ -32,6 +32,7 @@ model Caballo {
   razaId              String?     @db.Uuid
   provincia           Provincia?  @relation(fields: [provinciaId], references: [id])
   provinciaId         String?     @db.Uuid
+  pedigree            String?
 }
 
 model Provincia {
