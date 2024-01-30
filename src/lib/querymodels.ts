@@ -17,5 +17,6 @@ export const horseQueryModel = {
   raza: true,
   salto: true,
   sex: true,
-  videos: true
+  videos: true,
+  pedigree: true
 }
