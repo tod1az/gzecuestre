@@ -6,8 +6,6 @@ import DetailCarousel from "@/components/detail/DetailCarousel"
 import VideoCarousel from "@/components/detail/VideoCarousel";
 import { getAge } from "@/lib/utils";
 import { Horse } from "@/lib/types";
-import DetailSkeleton from "../skeletons/DetailSkeleton";
-import { Separator } from "@/components/ui/separator";
 import { GiFamilyTree } from "react-icons/gi";
 
 type PageProps = {
@@ -19,7 +17,6 @@ type PageProps = {
 export default async function Detail({ params }: PageProps) {
   const { id } = params
   const horse = await getHorse(id)
-  if (!horse) return <DetailSkeleton />
   return (
     <section className="flex flex-col w-3/4   md:gap-y-8  mb-[6rem]  items-center">
       <div className="w-full">
@@ -27,32 +24,30 @@ export default async function Detail({ params }: PageProps) {
       </div>
       <div className="flex flex-col  justify-between items-start md:pr-16 md:pl-2 w-full">
         <div className="flex-col flex  justify-center gap-6  pt-6">
-          <Separator />
           <h1 className="text-4xl md:text-5xl font-bold text-negro" >{horse?.nombre}</h1>
           {
             <p className="font-bold text-3xl">
-              {horse.precio_visible ? `$${horse?.precio}` : 'Precio a convenir'}
+              {horse!.precio_visible ? `$${horse?.precio}` : 'Precio a convenir'}
             </p>
           }
-          <Contact email={horse?.email} name={horse?.nombre} number={horse?.numero} contactName={horse?.nombre_contacto} />
-          <p className="text-pretty text-sm md:text-lg">{horse?.descripcion}</p>
+          <Contact email={horse!.email} name={horse!.nombre} number={horse!.numero} contactName={horse!.nombre_contacto} />
+          <p className="text-pretty text-sm md:text-lg">{horse!.descripcion}</p>
           {
-            horse.pedigree && (
+            horse!.pedigree && (
               <Link
                 target="_blank"
-                href={horse.pedigree}
+                href={horse!.pedigree}
                 className="font-bold hover:scale-105 transition-transform px-4 py-0 h-[2.5rem] w-max flex gap-2 items-center text-black hover:bg-negro hover:text-blanco bg-orange-200 rounded-lg"
               >
                 Pedigree <GiFamilyTree />
               </Link>
             )
           }
-          <Atributtes horse={horse} />
-          <Separator />
+          <Atributtes horse={horse!} />
         </div>
       </div>
       <div className="w-full mt-12">
-        <VideoCarousel items={horse?.videos} name={horse?.nombre} />
+        <VideoCarousel items={horse!.videos} name={horse!.nombre} />
       </div>
     </section>
 

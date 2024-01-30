@@ -1,3 +1,4 @@
+import NavBar from "@/components/NavBar"
 import { getHorse } from "@/lib/querys"
 import { type Metadata } from "next"
 
@@ -17,6 +18,7 @@ export async function generateMetadata(
 export default function layout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <NavBar />
       {children}
     </>
   )
