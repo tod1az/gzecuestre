@@ -32,6 +32,7 @@ export type Horse = {
   salto: number
   sex: string
   videos: string[] | null
+  pedigree: string | null
 }
 
 export type HomeSearchParams = {
