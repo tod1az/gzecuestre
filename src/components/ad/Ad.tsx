@@ -34,7 +34,7 @@ export default function Ad({ location, sponsors }: AdProps) {
   if (medium && !mediemWidth || xl && mediemWidth) return null
 
   return (
-    <div className="xl:m-2 h-[23rem] col-span-full">
+    <div className="xl:m-2 h-[18rem] col-span-full">
       <AdCarousel sponsors={sponsors} />
     </div>
   )

@@ -6,6 +6,7 @@ import { getAdLocation } from "@/lib/utils"
 import { getHorses, getTotalHorses } from "@/lib/querys"
 import NotFound from "./NotFound"
 import AdSv from "../ad/AdSv"
+import { cn } from "@/lib/utils"
 
 type CardContainerProps = {
   searchParams: HomeSearchParams
@@ -16,9 +17,10 @@ export default async function CardContainer({ searchParams }: CardContainerProps
   const adLocation = getAdLocation(horses)
   if (horses.length === 0) return <NotFound />
   return (
-    <section className="flex flex-col items-center pb-[10rem] w-full  pt-10 p-6 bg-gradient-to-b from-orange-100 via-blanco to-orange-200 rounded-lg ">
+    <section className="flex flex-col items-center pb-[10rem] justify-center w-full  pt-10 p-6 bg-gradient-to-b from-orange-100 via-blanco to-orange-200 rounded-lg ">
       <section
-        className="grid grid-cols-2 items-center rounded-lg xl:grid-cols-4 md:grid-cols-3 justify-center gap-[1rem] md:gap-[1rem]">
+        className={cn("grid grid-cols-2 items-center justify-center rounded-lg xl:grid-cols-4 md:grid-cols-3 gap-[1rem] md:gap-[1rem]"
+          , { 'md:flex w-screen flex flex-wrap ': horses.length < 4 })}>
         {
           horses.map((horse, index) => {
             if (index === adLocation[0]) {
@@ -44,10 +46,10 @@ export default async function CardContainer({ searchParams }: CardContainerProps
             )
           })
         }
-        {
-          horses.length <= 4 && <AdSv location={0} />
-        }
       </section>
+      {
+        horses.length <= 4 && <AdSv location={0} />
+      }
       <div className="pt-[2rem] pb-2 ">
         <Pagination totalItems={totalHorses} />
       </div>
