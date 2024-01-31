@@ -27,7 +27,7 @@ export default function Card({ horse }: CardProps) {
           {
             horse.precio_visible
               ? <h3 className="font-bold" >{`$${horse.precio}`}</h3>
-              : <h3 className="font-bold" >Precio a convenir</h3>
+              : <h3 className="font-bold whitespace-nowrap" >Precio a convenir</h3>
           }
         </div>
         <section className="px-7 flex flex-wrap text-center text-nowrap gap-1  md:gap-2 justify-center">
