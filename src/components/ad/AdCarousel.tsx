@@ -51,9 +51,9 @@ export default function AdCarousel({ sponsors }: AdCarouselProps) {
                   <Link
                     target="_blank"
                     href={item.url}>
-                    <CardContent className="flex object-cover w-full  h-[15rem] items-center justify-center p-0">
+                    <CardContent className="flex object-cover w-full  h-[10rem] md:h-[15rem] items-center justify-center p-0">
                       <Image
-                        className="px-6 w-auto h-[15rem] object-cover"
+                        className="px-6 w-auto h-[10rem] md:h-[15rem] object-cover"
                         src={item.logo}
                         width={500}
                         height={100}
