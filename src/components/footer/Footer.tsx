@@ -25,7 +25,7 @@ export function Footer() {
           </Link>
           <Link
             aria-label="Youtube Link"
-            className="LandingSubTitle hover:text-red-600" href="">
+            className="LandingSubTitle hover:text-red-600" href="https://www.youtube.com/channel/UCYf9_B81VDi2igBUSHcu6dw">
             <YoutubeIcon className="h-6 w-6" />
           </Link>
         </div>
