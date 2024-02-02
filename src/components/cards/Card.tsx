@@ -2,7 +2,7 @@ import { type Horse } from "@/lib/types"
 import Image from "next/image"
 import CardBadge from "./CardBadge"
 import Link from "next/link"
-import { calcularTiempoTranscurrido, getAge } from "@/lib/utils"
+import { getAge } from "@/lib/utils"
 
 type CardProps = {
   horse: Horse
@@ -36,10 +36,6 @@ export default function Card({ horse }: CardProps) {
           <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.sex}</CardBadge>
           <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.provincia?.nombre}</CardBadge>
         </section>
-        <small className="text-[0.7rem] mt-auto w-full text-center pb-2">
-          {`Hace ${calcularTiempoTranscurrido(horse.created_at)} en `}
-          <strong>{horse.provincia?.nombre}</strong>
-        </small>
       </article>
     </Link>
   )
