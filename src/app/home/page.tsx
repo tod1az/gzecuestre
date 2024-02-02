@@ -15,7 +15,7 @@ export default async function page({ searchParams }: PageProps) {
       <section className="mt-[4.5rem]  flex flex-col items-center justify-center gap-5 ">
         <div>
           <h2
-            className="text-xl mt-6 md:text-3xl w-full text-left text-negro">Novedades</h2>
+            className="text-xl mt-6 md:text-3xl w-full text-left text-negro">Destacados</h2>
           <Suspense fallback={<BannerSkeleton />}>
             <BannerCarouselServer />
           </Suspense>
