@@ -34,6 +34,7 @@ export default function Card({ horse }: CardProps) {
           <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.raza?.nombre}</CardBadge>
           <CardBadge className="group-hover:bg-white group-hover:text-black">{`${getAge(horse.fecha_de_nacimiento)} años`}</CardBadge>
           <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.sex}</CardBadge>
+          <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.provincia?.nombre}</CardBadge>
         </section>
         <small className="text-[0.7rem] mt-auto w-full text-center pb-2">
           {`Hace ${calcularTiempoTranscurrido(horse.created_at)} en `}
