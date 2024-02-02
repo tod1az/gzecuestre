@@ -13,7 +13,7 @@ export default function Hero() {
       ref={ref}
       id="intro"
       className={`flex flex-col justify-center 
-       gap-5 md:gap-[1rem] xl:gap-[10rem] items-center h-[88.5vh] md:scroll-m-[6rem] md:h-[82vh] xl:h-[92.05vh] mb-32 `}>
+       gap-5 md:gap-[1rem] xl:gap-[4rem] items-center h-[90.5vh] scroll-m-[89999999999rem] md:h-[90vh] xl:h-[98.05vh] mb-32 `}>
       <section className="flex flex-col xl:flex-row w-[95%] justify-center items-center text-left xl:items-center gap-6 xl:gap-[7rem]">
         <article className="flex flex-col   gap-2  xl:gap-5">
           <p className="text-xl md:text-2xl LandingSubTitle" >Bienvenidos a</p>
@@ -47,20 +47,13 @@ export default function Hero() {
           </section>
         </article>
         <Image
-          className="rounded-lg w-full md:w-auto  md:h-[368px]"
-          src={'/caballos.webp'}
-          width={480}
-          height={288}
-          alt="caballos"
-        />
-        {/* <Image
-          className="rounded-lg w-full md:w-auto  md:h-[480px]"
-          src={'/prueba1.jpg'}
-          width={480}
-          height={288}
+          className="rounded-lg w-full md:w-[500px]  md:h-auto"
+          src={'/hero.webp'}
+          width={500}
+          height={500}
           alt="caballos"
           quality={95}
-        /> */}
+        />
       </section>
       <Button
         className={`bg-orange-600 text-xl md:text-3xl md:py-8 md:px-8  peer-hover:bg-white/50
