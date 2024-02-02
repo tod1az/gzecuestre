@@ -33,8 +33,8 @@ export const Links = [
     name: 'inicio'
   },
   {
-    hash: '#featured',
-    name: 'destacado'
+    hash: '#new',
+    name: 'novedades'
   },
   {
     hash: '#sponsors',
