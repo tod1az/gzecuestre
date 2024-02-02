@@ -12,7 +12,7 @@ export default function Sponsors({ children }: SponsorsProps) {
     <section
       ref={ref}
       id="sponsors"
-      className="scroll-m-[4rem] flex flex-col items-center gap-[6rem]  xl:gap-[5rem] h-[91.5vh] md:h-[93vh] xl:h-[92.05vh] w-full">
+      className="scroll-m-[6rem] md:scroll-m-[4rem] flex flex-col items-center gap-[6rem]  xl:gap-[5rem] h-[91.5vh] md:h-[93vh] xl:h-[92.05vh] w-full">
       <LandingHeader>
         Auspiciantes
       </LandingHeader >
