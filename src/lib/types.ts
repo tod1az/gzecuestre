@@ -54,3 +54,9 @@ export type HomeSearchParams = {
 }
 
 export type Measurement = 'cm' | 'años' | '$'
+
+export type ContactEmailFormProps = {
+  message: string
+  nameSender: string
+  emailSender: string
+}
