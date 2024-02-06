@@ -11,13 +11,13 @@ export default function Pagination({ totalItems }: PaginationProps) {
   const { setPage, getCurrentPage } = useUrlSearchParams()
   const perPage = 20
   const totalPages = Math.trunc(totalItems / perPage)
+  if (totalPages === 1) return null
   const initialPage = getCurrentPage(totalPages)
 
   const handlePageChange = (page: number) => {
     setPage(page)
   }
 
-  if (totalPages === 1) return null
 
   return (
     <ResponsivePagination
