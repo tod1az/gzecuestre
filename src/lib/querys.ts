@@ -4,8 +4,8 @@ import { horseQueryModel } from './querymodels'
 import { HomeSearchParams } from './types'
 import prisma from '@/db/db'
 
-export const getHorse = async (id: string) => {
-  return await prisma.caballo.findFirst({
+export const getHorse = (id: string) => {
+  return prisma.caballo.findFirst({
     where: {
       id
     },
@@ -13,12 +13,12 @@ export const getHorse = async (id: string) => {
   })
 }
 
-export const getHorses = async (searchParams: HomeSearchParams) => {
+export const getHorses = (searchParams: HomeSearchParams) => {
   const perPage = 20
   const page = Number(searchParams.page ?? 1)
   const order = searchParams.orden ?? 'desc'
   const filters = setFilters(searchParams)
-  return await prisma.caballo.findMany({
+  return prisma.caballo.findMany({
     orderBy: [
       {
         precio_visible: 'asc'
@@ -34,8 +34,8 @@ export const getHorses = async (searchParams: HomeSearchParams) => {
   })
 }
 
-export const getFeaturedHorses = async () => {
-  return await prisma.caballo.findMany({
+export const getFeaturedHorses = () => {
+  return prisma.caballo.findMany({
     where: {
       destacado: true
     },
@@ -46,8 +46,8 @@ export const getFeaturedHorses = async () => {
   })
 }
 
-export const getLastHorses = async () => {
-  return await prisma.caballo.findMany({
+export const getLastHorses = () => {
+  return prisma.caballo.findMany({
     orderBy: [
       {
         created_at: 'desc'
@@ -61,8 +61,8 @@ export const getLastHorses = async () => {
   })
 }
 
-export const getBreeds = async () => {
-  return await prisma.raza.findMany({
+export const getBreeds = () => {
+  return prisma.raza.findMany({
     orderBy: [
       {
         nombre: 'asc'
@@ -71,8 +71,8 @@ export const getBreeds = async () => {
   })
 }
 
-export const getDisciplines = async () => {
-  return await prisma.disciplina.findMany({
+export const getDisciplines = () => {
+  return prisma.disciplina.findMany({
     orderBy: [
       {
         nombre: 'asc'
@@ -81,7 +81,7 @@ export const getDisciplines = async () => {
   })
 }
 
-export const getProvinces = async () => {
+export const getProvinces = () => {
   return prisma.provincia.findMany({
     orderBy: [
       {
@@ -91,7 +91,7 @@ export const getProvinces = async () => {
   })
 }
 
-export const getSponsors = async () => {
+export const getSponsors = () => {
   return prisma.auspiciante.findMany({
     orderBy: [
       {
@@ -101,7 +101,7 @@ export const getSponsors = async () => {
   })
 }
 
-export const getTotalHorses = async (searchParams: HomeSearchParams) => {
+export const getTotalHorses = (searchParams: HomeSearchParams) => {
   const filters = setFilters(searchParams)
   return prisma.caballo.count({
     where: filters as Prisma.CaballoWhereInput
