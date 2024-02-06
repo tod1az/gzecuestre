@@ -11,7 +11,7 @@ export function Footer() {
         <Logo />
         <nav className="flex flex-col gap-2 xl:flex-row">
           <FooterOptionalLinks />
-          <Link className="text-sm hover:underline" href="#contact">
+          <Link className="text-sm hover:underline" href="/#contact">
             Contacto
           </Link>
         </nav>
