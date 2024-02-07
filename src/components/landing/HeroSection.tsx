@@ -13,7 +13,7 @@ export default function Hero() {
       ref={ref}
       id="intro"
       className={`flex flex-col justify-center 
-       gap-5 md:gap-[1rem] xl:gap-[4rem] items-center h-[90.5vh] scroll-m-[89999999999rem] md:h-[90vh] xl:h-[98.05vh] mb-32 `}>
+       gap-5 md:gap-[1rem] xl:gap-[4rem] items-center mt-[2.5rem] h-[100vh] scroll-m-[89999999999rem] md:h-[90vh] xl:h-[98.05vh] mb-32 `}>
       <section className="flex flex-col xl:flex-row w-[95%] justify-center items-center text-left xl:items-center gap-6 xl:gap-[7rem]">
         <article className="flex flex-col   gap-2  xl:gap-5">
           <p className="text-xl md:text-2xl LandingSubTitle" >Bienvenidos a</p>
@@ -24,14 +24,15 @@ export default function Hero() {
             El mejor lugar para la compra y venta de <strong>caballos</strong>
           </p>
           <section className="flex justify-between md:justify-center md:gap-[7rem] pt-6 xl:pl-10">
-            <Button
-              className={` flex gap-2 items-center bg-white/50
+            <Link
+              href={'/#contact'}
+              className={` flex gap-2 items-center bg-white/50 px-4 rounded-lg
              text-negro text-lg md:text-xl hover:bg-negro hover:text-white
              active:scale-105 active:translate-y-1 transition-all
              `}>
               Contáctanos
               <LuMailPlus />
-            </Button>
+            </Link>
             <Button
               className={`bg-white/50 text-negro text-lg md:text-xl 
               hover:bg-negro hover:text-white
