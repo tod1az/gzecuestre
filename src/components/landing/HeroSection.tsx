@@ -18,7 +18,7 @@ export default function Hero() {
         <article className="flex flex-col   gap-2  xl:gap-5">
           <p className="text-xl md:text-2xl LandingSubTitle" >Bienvenidos a</p>
           <h1 className="LandingTitle font-bold text-4xl md:text-5xl">
-            Gz Ecuestre
+            Gz Caballos
           </h1>
           <p className="text-xl md:text-3xl xl:text-2xl LandingSubTitle">
             El mejor lugar para la compra y venta de <strong>caballos</strong>
