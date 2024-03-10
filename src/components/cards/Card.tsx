@@ -1,12 +1,12 @@
-import { type Horse } from "@/lib/types"
-import Image from "next/image"
-import CardBadge from "./CardBadge"
-import Link from "next/link"
-import { getAge } from "@/lib/utils"
+import { type Horse } from "@/lib/types";
+import Image from "next/image";
+import CardBadge from "./CardBadge";
+import Link from "next/link";
+import { getAge } from "@/lib/utils";
 
 type CardProps = {
-  horse: Horse
-}
+  horse: Horse;
+};
 
 export default function Card({ horse }: CardProps) {
   return (
@@ -24,19 +24,31 @@ export default function Card({ horse }: CardProps) {
         </div>
         <div className="text-left px-7 mb-1 md:mb-2">
           <h2 className="mt-2 text-sm font-bold">{horse.nombre}</h2>
-          {
-            horse.precio_visible
-              ? <h3 className="font-bold" >{`$${horse.precio}`}</h3>
-              : <h3 className="font-bold whitespace-nowrap" >Precio a convenir</h3>
-          }
+          <h3 className="font-bold whitespace-nowrap">Precio a convenir</h3>
         </div>
         <section className="px-7 flex flex-wrap text-center text-nowrap gap-1  md:gap-2 justify-center">
-          <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.raza?.nombre}</CardBadge>
-          <CardBadge className="group-hover:bg-white group-hover:text-black">{`${getAge(horse.fecha_de_nacimiento)} años`}</CardBadge>
-          <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.sex}</CardBadge>
-          <CardBadge className="group-hover:bg-white group-hover:text-black">{horse.provincia?.nombre}</CardBadge>
+          {horse.raza?.nombre && (
+            <CardBadge className="group-hover:bg-white group-hover:text-black">
+              {horse.raza?.nombre}
+            </CardBadge>
+          )}
+          {horse.fecha_de_nacimiento && (
+            <CardBadge className="group-hover:bg-white group-hover:text-black">{`${getAge(
+              horse.fecha_de_nacimiento
+            )} años`}</CardBadge>
+          )}
+          {horse.sex && (
+            <CardBadge className="group-hover:bg-white group-hover:text-black">
+              {horse.sex}
+            </CardBadge>
+          )}
+          {horse.provincia?.nombre && (
+            <CardBadge className="group-hover:bg-white group-hover:text-black">
+              {horse.provincia?.nombre}
+            </CardBadge>
+          )}
         </section>
       </article>
     </Link>
-  )
+  );
 }
