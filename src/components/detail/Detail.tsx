@@ -55,7 +55,7 @@ export default async function Detail({ params }: PageProps) {
 }
 
 type ContactProps = {
-  email: string;
+  email: string | null;
   number: string;
   name: string;
   contactName: string;
