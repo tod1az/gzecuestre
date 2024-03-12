@@ -65,8 +65,7 @@ function Contact({ number, email, name, contactName }: ContactProps) {
   return (
     <section className="flex flex-col gap-2 items-center pt-2">
       <p className="w-full text-left text-lg mb-5">
-        <strong>Nombre de contacto: </strong>
-        {contactName}
+        <strong>{`Nombre de contacto: ${contactName}`}</strong>
       </p>
       <div className="flex flex-col justify-start w-full gap-4">
         <div className="flex items-center justify-between md:justify-start w-full md:gap-[10rem]">
