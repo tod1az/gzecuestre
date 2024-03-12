@@ -4,7 +4,7 @@ import { LuMailPlus } from "react-icons/lu";
 import Link from "next/link";
 import DetailCarousel from "@/components/detail/DetailCarousel";
 import VideoCarousel from "@/components/detail/VideoCarousel";
-import { getAge } from "@/lib/utils";
+import { getAgeFns } from "@/lib/utils";
 import { Horse } from "@/lib/types";
 import { GiFamilyTree } from "react-icons/gi";
 
@@ -106,7 +106,7 @@ function Atributtes({ horse }: AtributtesProps) {
       </p> */}
       <p>
         <strong>Edad: </strong>
-        {`${getAge(horse.fecha_de_nacimiento)} años`}
+        {getAgeFns(horse.fecha_de_nacimiento)}
       </p>
       <p>
         <strong>Sexo: </strong>
