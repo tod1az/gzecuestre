@@ -120,10 +120,12 @@ function Atributtes({ horse }: AtributtesProps) {
         <strong>Salto: </strong>
         {`${horse.salto}cm`}
       </p> */}
-      <p>
-        <strong>Provincia: </strong>
-        {horse.provincia?.nombre}
-      </p>
+      {horse.provincia && (
+        <p>
+          <strong>Provincia: </strong>
+          {horse.provincia?.nombre}
+        </p>
+      )}
       {/* <p>
         <strong>Disciplina: </strong>
         {horse.disciplina?.nombre}
