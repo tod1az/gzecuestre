@@ -15,7 +15,7 @@ export const getAdLocation = (horses: Horse[]) => {
 export const getAgeFns = (birthdate: Date) => {
   const ageInYears = differenceInYears(new Date(), birthdate);
   if (ageInYears === 1) return `${ageInYears} año`;
-  if (ageInYears >= 1) return `${ageInYears} años`;
+  if (ageInYears > 1) return `${ageInYears} años`;
   const ageInMonths = differenceInMonths(new Date(), birthdate);
   if (ageInMonths === 1) return `${ageInMonths} mes`;
   if (ageInMonths > 1) return `${ageInMonths} meses`;
