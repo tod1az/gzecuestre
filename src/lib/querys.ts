@@ -16,7 +16,6 @@ export const getHorse = (id: string) => {
 export const getHorses = (searchParams: HomeSearchParams) => {
   const perPage = 20;
   const page = Number(searchParams.page ?? 1);
-  const order = searchParams.orden ?? "desc";
   const filters = setFilters(searchParams);
   return prisma.caballo.findMany({
     where: filters as Prisma.CaballoWhereInput,
