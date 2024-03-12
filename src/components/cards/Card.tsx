@@ -2,7 +2,7 @@ import { type Horse } from "@/lib/types";
 import Image from "next/image";
 import CardBadge from "./CardBadge";
 import Link from "next/link";
-import { getAge } from "@/lib/utils";
+import { getAgeFns } from "@/lib/utils";
 
 type CardProps = {
   horse: Horse;
@@ -33,9 +33,9 @@ export default function Card({ horse }: CardProps) {
             </CardBadge>
           )}
           {horse.fecha_de_nacimiento && (
-            <CardBadge className="group-hover:bg-white group-hover:text-black">{`${getAge(
-              horse.fecha_de_nacimiento
-            )} años`}</CardBadge>
+            <CardBadge className="group-hover:bg-white group-hover:text-black">
+              {getAgeFns(horse.fecha_de_nacimiento)}
+            </CardBadge>
           )}
           {horse.sex && (
             <CardBadge className="group-hover:bg-white group-hover:text-black">
