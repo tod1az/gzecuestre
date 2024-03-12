@@ -16,14 +16,14 @@ model Caballo {
   fecha_de_nacimiento DateTime
   sex                 String
   descripcion         String
-  email               String
+  email               String?
   numero              String
   precio              Int?
   precio_visible      Boolean?    @default(true)
   videos              String[]
   imagenes            String[]
-  alzada              Int
-  salto               Int
+  alzada              Int?
+  salto               Int?
   destacado           Boolean?    @default(false)
   created_at          DateTime    @default(now())
   disciplina          Disciplina? @relation(fields: [disciplinaId], references: [id])
