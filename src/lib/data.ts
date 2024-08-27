@@ -36,10 +36,10 @@ export const Links = [
     hash: "#new",
     name: "novedades",
   },
-  // {
-  //   hash: '#sponsors',
-  //   name: 'auspiciantes'
-  // },
+  {
+    hash: "#sponsors",
+    name: "auspiciantes",
+  },
   {
     hash: "#about",
     name: "nosotros",
